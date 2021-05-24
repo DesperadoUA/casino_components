@@ -1,0 +1,220 @@
+a,
+button {
+    @include anim;
+}
+
+%btn-general {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    //overflow: hidden;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.btn-default {
+    @extend %btn-general;
+    color: $theme-color-01;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    position: relative;
+    padding: 0;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $theme-color-01;
+        transform: scaleX(0) translateY(3px);
+        transition: transform $animation-speed;
+    }
+
+    @include hover {
+        &:after {
+            transform: scaleX(1) translateY(3px);
+        }
+    }
+}
+
+.btn-primary {
+    @extend %btn-general;
+    font-size: 14px;
+    border-radius: 19px;
+    background-color: $theme-color-01;
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    min-height: 38px;
+    padding: 5px .9em;
+
+    @include hover {
+        background-color: $theme-color-03;
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /* hack for IE11 */
+    @media all and (-ms-high-contrast:none) {
+        *::-ms-backdrop, & {
+            height: 38px;
+        }
+    }
+
+    &.is-disabled,
+    &[disabled] {
+        background-color: $disabled-bg;
+        color: $disabled-cr;
+    }
+
+    .icon-arrow-next {
+        font-size: .714em;
+        margin-left: 5px;
+        margin-top: 1px;
+    }
+}
+
+[class*="btn"][disabled] {
+    pointer-events: none;
+}
+
+.btn-secondary {
+    @extend %btn-general;
+    font-size: 14px;
+    border-radius: 19px;
+    background-color: $theme-color-02;
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    min-height: 38px;
+    padding: 5px .9em;
+
+    @include hover {
+        background-color: $theme-color-03;
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /* hack for IE11 */
+    @media all and (-ms-high-contrast:none) {
+        *::-ms-backdrop, & {
+            height: 38px;
+        }
+    }
+
+    &.is-disabled,
+    &[disabled] {
+        background-color: $disabled-bg;
+        color: $disabled-cr;
+    }
+
+    .icon-arrow-next {
+        font-size: .714em;
+        margin-left: 5px;
+        margin-top: 1px;
+    }
+}
+
+.btn-third {
+    @extend %btn-general;
+    @extend .btn-primary;
+    background-color: $theme-color-05;
+    color: $theme-color-01;
+
+    .icon-hand {
+        margin-right: 11px;
+    }
+
+    @include hover {
+        color: #fff;
+    }
+
+}
+
+.btn-lg {
+    font-size: 18px;
+    //@include adaptive-font(16, 18);
+    min-height: 50px;
+    border-radius: 25px;
+    padding: 5px 1.1em;
+
+    @media all and (-ms-high-contrast:none) {
+        *::-ms-backdrop, & {
+            height: 50px;
+        }
+    }
+
+    .icon-arrow-next {
+        font-size: 14px;
+    }
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+.btn-back {
+    @extend %btn-general;
+    width: 25px;
+    height: 25px;
+    position: relative;
+
+    @include hover {
+        &:before,
+        &:after {
+            background-color: $theme-color-01;
+        }
+    }
+
+    &:before,
+    &:after {
+        @include anim;
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background-color: #000;
+    }
+
+    &:before {
+        top: 7px;
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        transform: rotate(45deg);
+        bottom: 6px;
+    }
+}
+
+.btn-close {
+    @extend %btn-general;
+    font-size: 22px;
+    color: $disabled-cr;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 10;
+
+    @include hover {
+        color: $theme-color-01;
+    }
+}

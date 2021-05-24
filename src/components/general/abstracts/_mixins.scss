@@ -1,0 +1,122 @@
+@mixin hover {
+    @include media('>=desktop') {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        opacity: 1;
+        @content
+    }
+    &:-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+    &.placeholder {
+        @content
+    }
+}
+
+@mixin anim($param: all, $dur: $animation-speed, $type: $animation-type, $delay: 0s) {
+    transition: $param $dur $type $delay;
+}
+
+@mixin anim-param($params...) {
+    transition-property: $params;
+}
+
+@mixin z-index($qty) {
+    position: relative;
+    $elements: $qty;
+
+    @for $i from 0 to $elements {
+        &:nth-child(#{$i + 1}) {
+            z-index: $elements - $i;
+        }
+    }
+}
+
+// vertical/horizontal align el
+// usage: @include xycenter/xcenter/ycenter;
+//
+@mixin xycenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin xcenter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@mixin ycenter {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@mixin adaptive-font($mobSize, $pcSize) {
+    $addSize: $pcSize - $mobSize;
+    $max-width: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 360px) / #{$max-width}));
+
+    @include media('>=#{$maxWidth + px}') {
+        font-size: #{$pcSize + px};
+    }
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@mixin horizontal-spacing {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+@mixin form-field-error-state {
+    label {
+        color: $cr-error;
+    }
+    input {
+        border-color: $cr-error;
+    }
+}

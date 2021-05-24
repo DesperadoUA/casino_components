@@ -1,0 +1,99 @@
+// body class when menu is open
+body {
+    @include media('<desktop') {
+        &.is-menu-open {
+            overflow: hidden;
+
+            //.logo,
+            .btn-callback,
+            .main,
+            .footer {
+                filter: blur(15px);
+            }
+
+            .btn-top {
+                display: none;
+            }
+        }
+    }
+}
+
+.navbar__btn {
+    position: relative;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-color: $theme-color-01;
+    border: 0;
+    cursor: pointer;
+    z-index: 1002;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    @include media('<desktop') {
+        display: flex;
+    }
+
+    .bar {
+        @include anim;
+        position: relative;
+        background-color: #fff;
+        background-clip: padding-box;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+
+        .is-menu-open & {
+            transform: rotate(-90deg);
+        }
+
+        &:before {
+            left: 100%;
+            margin-left: 4px;
+        }
+
+        &:after {
+            right: 100%;
+            margin-right: 4px;
+        }
+
+        &:before,
+        &:after {
+            @include ycenter;
+            content: '';
+            transform: rotate(0) translateY(-50%);
+            background-clip: padding-box;
+            background-color: #fff;
+            transform-origin: 0 50%;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+        }
+    }
+}
+
+.mobile-menu {
+    @include media('<desktop') {
+        @include anim($dur: $animation-speed);
+        overflow: hidden;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(#fff, .62);
+        padding: 124px 26px 30px;
+        display: flex;
+        flex-direction: column;
+
+        .is-modal-open & {
+            display: none;
+        }
+
+        .is-menu-open & {
+            transform: translateX(-100%);
+        }
+    }
+}

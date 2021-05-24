@@ -1,0 +1,62 @@
+.link-primary {
+    font-size: 15px;
+    padding-right: 10px;
+    display: inline-block;
+    position: relative;
+    color: $theme-color-02;
+    font-weight: 500;
+    text-decoration: none;
+
+    @include media('>=tablet') {
+        font-size: 16px;
+    }
+
+    &:before {
+        @include anim;
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 10px;
+        border-bottom: 1px solid currentColor;
+        opacity: 0;
+    }
+
+    &:after {
+        @include anim;
+        @include ycenter;
+        content: '';
+        right: 0;
+        background-color: $theme-color-02;
+        -webkit-mask: url(../images/arrow-next.svg) no-repeat center;
+        mask: url(../images/arrow-next.svg) no-repeat center;
+        width: 6px;
+        height: 12px;
+        margin-top: 1px;
+    }
+
+    @include hover {
+        color: $theme-color-02;
+
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+
+.link-primary--back {
+    @extend .link-primary;
+    padding-right: 0;
+    padding-left: 10px;
+
+    &:before {
+        right: 0;
+        left: 10px;
+    }
+
+    &:after {
+        right: auto;
+        left: 0;
+        transform: translateY(-50%) scaleX(-1);
+    }
+}

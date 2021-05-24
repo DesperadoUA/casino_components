@@ -1,0 +1,99 @@
+@import '../general/vendors/include-media';
+@import '../general/base/variables';
+@import '../general/abstracts/helpers';
+@import '../general/abstracts/classes';
+@import '../general/abstracts/mixins';
+@import '../general/abstracts/responsive-visibility';
+@import '../general/abstracts/responsive-utilities';
+
+body {
+    .header,
+    .main,
+    .bottom-blocks {
+        transition: filter $animation-speed;
+    }
+
+    &.is-modal-open {
+        overflow: hidden;
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .header,
+        .main,
+        .bottom-blocks {
+            filter: blur(5px);
+        }
+
+        .btn-top {
+            display: none;
+        }
+    }
+
+    &:after {
+        @include anim;
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(#cfd1dc, .45);
+        z-index: 998;
+
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.modal {
+    @include xycenter;
+    @include anim;
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    max-width: 454px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    @include media('>=desktop') {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include media('<tablet') {
+        max-width: 94.933vw;
+    }
+
+    &.is-open {
+        transition-duration: $animation-speed * 2;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.modal__btns {
+    width: 100%;
+}
+
+.modal__content {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media('>=desktop') {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}

@@ -1,0 +1,119 @@
+:root {
+    --container: 1210px;
+    --container--md: 1490px;
+
+    @include media('>=desktop', '<widescreen') {
+        --container: 92vw;
+        --container--md: 96.09375vw;
+    }
+
+    @include media('>=widescreen', '<largescreen') {
+        --container: 85.15625vw;
+        --container--md: 96.09375vw;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+%container-general {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: $side-gutters-sm;
+    padding-right: $side-gutters-sm;
+}
+
+.container {
+    @extend %container-general;
+    max-width: var(--container);
+
+    &--xl {
+        @extend %container-general;
+        max-width: $container-xl;
+    }
+
+    &--md {
+        @extend %container-general;
+        max-width: var(--container--md);
+    }
+
+    &--cms {
+        @extend %container-general;
+        max-width: $container-cms;
+    }
+
+    &--xs {
+        @extend %container-general;
+        max-width: $container-xs;
+    }
+
+    & &,
+    .wrapped {
+        @extend .no-gutters;
+    }
+}
+
+.no-gutters {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.section-ttl {
+    @include adaptive-font(30, 50);
+    font-family: $alt-font-family;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $theme-color-01;
+
+    @include media('<desktop') {
+        text-align: center;
+    }
+}
+
+.section-descr {
+    font-size: 16px;
+
+    @include media('<desktop') {
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+.main {
+    overflow: hidden;
+    position: relative;
+    background-image: url(var(--bg-main));
+    background-repeat: no-repeat;
+}
+
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination:not(.pagination-circle) {
+    .swiper-pagination-bullet {
+        width: 30px;
+        height: 3px;
+        border-radius: 4px;
+        background-color: $theme-color-04;
+        margin-left: 3px;
+        margin-right: 3px;
+
+        @include hover {
+            background-color: $theme-color-02;
+        }
+
+        &.swiper-pagination-bullet-active {
+            background-color: $theme-color-02;
+        }
+    }
+}

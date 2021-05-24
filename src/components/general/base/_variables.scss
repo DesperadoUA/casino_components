@@ -1,0 +1,82 @@
+// Body
+$base-text-color:           #6c7796;
+$base-bg-color:             #fff;
+$theme-color-01:            #3b4561;
+$theme-color-02:            #3fa595;
+$theme-color-03:            #58627F;
+$theme-color-04:            #dbf0e9;
+$theme-color-05:            #f4f5f8;
+$disabled-bg:               #fafbfc;
+$disabled-cr:               #c7ccd8;
+$link-color:                $theme-color-02;
+$footer-txt-cr:             #83899c;
+
+$cr-error:                  #ff0029;
+$cr-success:                $theme-color-02;
+
+$form-hor-padding-sm:       20px;
+$border-color:              rgba(#000, .1);
+
+$form-control-bg:           $theme-color-05;
+
+$base-font-size:            15px;
+$base-line-height:          1.15 !default;
+$base-font-family:          Montserrat, Arial, sans-serif;
+$alt-font-family:           'PT Sans Caption', Arial, sans-serif;
+
+$animation-type:            cubic-bezier(0.215, 0.61, 0.355, 1) !default;
+$animation-hero-speed:      .75s;
+$animation-popup-speed:      .35s;
+$animation-speed:           .27s;
+
+$container-xl:              1920px;
+$container-cms:             730px;
+$container-xs:              370px;
+$base-min-width:            320px;
+$side-gutters-sm:           15px;
+$maxWidth:                  1440; // max screen size for adaptive font mixin
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$xxl-screen-ratio:          1.25;
+
+$screen-xs:                 530px !default;
+$screen-xs-min:             $screen-xs !default;
+$screen-phone:              $screen-xs-min !default;
+
+$screen-ph:                 600px !default;
+
+$screen-sm:                 768px !default;
+$screen-sm-min:             $screen-sm !default;
+$screen-tablet:             $screen-sm-min !default;
+
+$screen-md:                 992px !default;
+$screen-md-min:             $screen-md !default;
+$screen-desktop:            $screen-md-min !default;
+
+$screen-lg:                 1280px !default;
+$screen-lg-min:             $screen-lg !default;
+$screen-lg-desktop:         $screen-lg-min !default;
+
+$screen-xl:                 1600px !default;
+
+$screen-xxl:                1921px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:             ($screen-sm-min - 1) !default;
+$screen-sm-max:             ($screen-md-min - 1) !default;
+$screen-md-max:             ($screen-lg-min - 1) !default;
+
+/* media queries breakpoints */
+$breakpoints: (
+    'phone': $screen-xs,
+    'phablet': $screen-ph,
+    'tablet': $screen-sm,
+    'desktop': $screen-md,
+    'widescreen': $screen-lg,
+    'largescreen': $screen-xl,
+    'extra-large': $screen-xxl
+);
