@@ -9,18 +9,18 @@ body {
     font-size: $base-font-size;
     font-family: $base-font-family;
     line-height: 1.25;
-    color: $base-text-color;
-    background-color: $base-bg-color;
+    color: var(--theme-cr-txt);
+    background-color: var(--theme-bg-1);
 }
 
 a {
     text-decoration: none;
-    color: $link-color;
+    color: var(--theme-cr-3);
 
-    &:not([class*="btn-"]):not([class*="link-"]) {
+    &:not([class]){
         @include hover {
             text-decoration: underline;
-            color: $link-color;
+            color: var(--theme-cr-3);
         }
     }
 }

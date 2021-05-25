@@ -27,8 +27,6 @@
 
 .tabs__nav-link {
     @include adaptive-font(13, 16);
-    background-color: $theme-color-04;
-    color: $theme-color-01;
     font-weight: 600;
     line-height: 1.3;
     text-align: center;
@@ -113,39 +111,6 @@
             margin-top: auto;
         }
     }
-
-    .icon-arrow-circle {
-        @include ycenter;
-        right: 29px;
-        font-size: 24px;
-        color: $theme-color-02;
-
-        @include media('>=desktop') {
-            display: none;
-        }
-    }
-}
-
-.tabs__nav-ttl {
-    @include adaptive-font(26, 31);
-    font-weight: 700;
-
-    @include media('<desktop') {
-        order: -1;
-        margin-right: 18px;
-    }
-
-    @include media('>=desktop') {
-        width: 100%;
-        display: block;
-        margin-bottom: auto;
-        text-align: left;
-        margin-top: 6px;
-    }
-
-    @include media('>=desktop', '<widescreen') {
-        font-size: 26px;
-    }
 }
 
 .tabs__content {
@@ -156,99 +121,4 @@
     &.is-active {
         position: static;
     }
-}
-
-
-
-.diet-swiper {
-    @include media('<desktop') {
-        margin-bottom: 40px;
-    }
-
-    @include media('>=desktop') {
-        align-items: center;
-        justify-content: space-between;
-        margin-left: -10px;
-        margin-right: -10px;
-        margin-bottom: 33px;
-    }
-
-    .swiper-wrapper {
-        @include media('<tablet') {
-            margin-bottom: 20px;
-        }
-
-        @include media('<desktop') {
-            margin-bottom: 40px;
-        }
-    }
-
-    .swiper-pagination {
-        @include media('>=desktop') {
-            display: none;
-        }
-    }
-}
-
-.diet-card {
-    @extend .tabs__nav-link;
-    @include anim;
-    cursor: pointer;
-    width: auto;
-    text-align: left;
-
-    @include media('<desktop') {
-        padding: 0;
-        flex-direction: column;
-        display: block;
-        background-color: $theme-color-04;
-    }
-
-    &.swiper-slide-active {
-        @include media('<desktop') {
-            background-color: $disabled-bg;
-
-            .diet-card__close {
-                display: block;
-            }
-        }
-    }
-}
-
-.diet-card__heading {
-    @include media('<desktop') {
-        display: flex;
-        align-items: center;
-        padding: 20px 30px;
-        border-bottom: 2px solid rgba(#8bcbb7, .1);
-    }
-
-    .diet-card__close {
-        display: none;
-
-        @include media('<desktop') {
-            position: absolute;
-            right: 28px;
-            top: 28px;
-            font-size: 22px;
-        }
-    }
-}
-
-.diet-card__content {
-    padding: 15px 30px 30px;
-    @include media('>=desktop') {
-        display: none;
-    }
-
-    p {
-        margin-bottom: 17px;
-    }
-}
-
-.diet-card__name {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: $theme-color-01;
 }

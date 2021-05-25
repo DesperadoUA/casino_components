@@ -1,18 +1,3 @@
-:root {
-    --container: 1210px;
-    --container--md: 1490px;
-
-    @include media('>=desktop', '<widescreen') {
-        --container: 92vw;
-        --container--md: 96.09375vw;
-    }
-
-    @include media('>=widescreen', '<largescreen') {
-        --container: 85.15625vw;
-        --container--md: 96.09375vw;
-    }
-}
-
 * {
     box-sizing: border-box;
 }
@@ -45,7 +30,7 @@ body, html {
 
     &--cms {
         @extend %container-general;
-        max-width: $container-cms;
+        max-width: var(--container--cms);
     }
 
     &--xs {
@@ -65,33 +50,31 @@ body, html {
 }
 
 .section-ttl {
-    @include adaptive-font(30, 50);
-    font-family: $alt-font-family;
+    @include adaptive-font(20, 28);
     font-weight: 700;
-    line-height: 1.2;
-    color: $theme-color-01;
-
-    @include media('<desktop') {
-        text-align: center;
-    }
-}
-
-.section-descr {
-    font-size: 16px;
-
-    @include media('<desktop') {
-        max-width: 340px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
+    line-height: 1.358;
+    color: var(--theme-cr-2);
 }
 
 .main {
     overflow: hidden;
     position: relative;
-    background-image: url(var(--bg-main));
+    background-position: 50% 0;
     background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 111px;
+
+    @include media('>=desktop') {
+        padding-top: 146px;
+    }
+
+    .webp & {
+        background-image: var(--bg-main-webp);
+    }
+
+    body:not(.webp) & {
+        background-image: var(--bg-main);
+    }
 }
 
 .swiper-pagination {
@@ -104,16 +87,16 @@ body, html {
         width: 30px;
         height: 3px;
         border-radius: 4px;
-        background-color: $theme-color-04;
+        background-color: var(--theme-cr-2);
         margin-left: 3px;
         margin-right: 3px;
 
         @include hover {
-            background-color: $theme-color-02;
+            background-color: var(--theme-cr-3);
         }
 
         &.swiper-pagination-bullet-active {
-            background-color: $theme-color-02;
+            background-color: var(--theme-cr-3);
         }
     }
 }

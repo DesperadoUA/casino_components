@@ -7,7 +7,7 @@
 @import '../general/abstracts/responsive-utilities';
 
 .footer {
-    background-color: var(--theme-cr1);
+    background-color: var(--theme-cr-1);
     color: var(--theme-cr-txt);
     position: relative;
     overflow: hidden;
@@ -41,7 +41,7 @@
 .footer__copyrights {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var(--theme-cr2);
+    background-color: var(--theme-cr-2);
     font-size: 15px;
     text-align: center;
 

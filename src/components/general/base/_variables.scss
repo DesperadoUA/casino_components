@@ -1,28 +1,20 @@
 // Body
-$base-text-color:           #6c7796;
-$base-bg-color:             #fff;
-$theme-color-01:            #3b4561;
-$theme-color-02:            #3fa595;
-$theme-color-03:            #58627F;
-$theme-color-04:            #dbf0e9;
-$theme-color-05:            #f4f5f8;
 $disabled-bg:               #fafbfc;
 $disabled-cr:               #c7ccd8;
-$link-color:                $theme-color-02;
 $footer-txt-cr:             #83899c;
 
 $cr-error:                  #ff0029;
-$cr-success:                $theme-color-02;
+$cr-success:                var(--cr-success) !global;
 
 $form-hor-padding-sm:       20px;
 $border-color:              rgba(#000, .1);
 
-$form-control-bg:           $theme-color-05;
+$form-control-bg:           var(--theme-cr-1);
 
 $base-font-size:            15px;
 $base-line-height:          1.15 !default;
-$base-font-family:          Montserrat, Arial, sans-serif;
-$alt-font-family:           'PT Sans Caption', Arial, sans-serif;
+$base-font-family:          'Open Sans', Arial, sans-serif;
+$alt-font-family:           'Roboto', Arial, sans-serif;
 
 $animation-type:            cubic-bezier(0.215, 0.61, 0.355, 1) !default;
 $animation-hero-speed:      .75s;

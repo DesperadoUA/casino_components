@@ -17,7 +17,7 @@ button {
 
 .btn-default {
     @extend %btn-general;
-    color: $theme-color-01;
+    color: var(--theme-cr-1);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.1;
@@ -32,7 +32,7 @@ button {
         left: 0;
         height: 2px;
         width: 100%;
-        background-color: $theme-color-01;
+        background-color: var(--theme-cr-1);
         transform: scaleX(0) translateY(3px);
         transition: transform $animation-speed;
     }
@@ -48,7 +48,7 @@ button {
     @extend %btn-general;
     font-size: 14px;
     border-radius: 19px;
-    background-color: $theme-color-01;
+    background-color: var(--btn-primary);
     font-weight: 500;
     line-height: 1.5;
     position: relative;
@@ -58,7 +58,7 @@ button {
     padding: 5px .9em;
 
     @include hover {
-        background-color: $theme-color-03;
+        background-color: var(--btn-primary);
 
         &:after {
             opacity: 1;
@@ -94,7 +94,7 @@ button {
     @extend %btn-general;
     font-size: 14px;
     border-radius: 19px;
-    background-color: $theme-color-02;
+    background-color: var(--btn-secondary);
     font-weight: 500;
     line-height: 1.5;
     position: relative;
@@ -104,7 +104,7 @@ button {
     padding: 5px .9em;
 
     @include hover {
-        background-color: $theme-color-03;
+        background-color: var(--btn-secondary);
 
         &:after {
             opacity: 1;
@@ -132,22 +132,6 @@ button {
     }
 }
 
-.btn-third {
-    @extend %btn-general;
-    @extend .btn-primary;
-    background-color: $theme-color-05;
-    color: $theme-color-01;
-
-    .icon-hand {
-        margin-right: 11px;
-    }
-
-    @include hover {
-        color: #fff;
-    }
-
-}
-
 .btn-lg {
     font-size: 18px;
     //@include adaptive-font(16, 18);
@@ -171,40 +155,6 @@ button {
     width: 100%;
 }
 
-.btn-back {
-    @extend %btn-general;
-    width: 25px;
-    height: 25px;
-    position: relative;
-
-    @include hover {
-        &:before,
-        &:after {
-            background-color: $theme-color-01;
-        }
-    }
-
-    &:before,
-    &:after {
-        @include anim;
-        content: '';
-        position: absolute;
-        width: 16px;
-        height: 2px;
-        background-color: #000;
-    }
-
-    &:before {
-        top: 7px;
-        transform: rotate(-45deg);
-    }
-
-    &:after {
-        transform: rotate(45deg);
-        bottom: 6px;
-    }
-}
-
 .btn-close {
     @extend %btn-general;
     font-size: 22px;
@@ -215,6 +165,6 @@ button {
     z-index: 10;
 
     @include hover {
-        color: $theme-color-01;
+        color: var(--theme-cr-3);
     }
 }

@@ -3,7 +3,7 @@
     padding-right: 10px;
     display: inline-block;
     position: relative;
-    color: $theme-color-02;
+    color: var(--theme-cr-3);
     font-weight: 500;
     text-decoration: none;
 
@@ -22,21 +22,8 @@
         opacity: 0;
     }
 
-    &:after {
-        @include anim;
-        @include ycenter;
-        content: '';
-        right: 0;
-        background-color: $theme-color-02;
-        -webkit-mask: url(../images/arrow-next.svg) no-repeat center;
-        mask: url(../images/arrow-next.svg) no-repeat center;
-        width: 6px;
-        height: 12px;
-        margin-top: 1px;
-    }
-
     @include hover {
-        color: $theme-color-02;
+        color: var(--theme-cr-3);
 
         &:before {
             opacity: 1;

@@ -1,0 +1,13 @@
+@use '../general/main';
+
+.intro {
+    //@include adaptive-font(14, 18);
+    line-height: 1.8333;
+    color: var(--theme-cr-txt-alt);
+    color: $cr-success;
+}
+
+.intro__sub-heading {
+    //@include adaptive-font(24, 32);
+    line-height: 1.25;
+}

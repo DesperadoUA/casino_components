@@ -77,6 +77,6 @@
 // Google fonts loader
 WebFont.load({
     google: {
-        families: ['Roboto:400', 'Montserrat:400,500,600,700', 'PT Sans Caption:700&display=swap']
+        families: ['Roboto:400, 700', 'Open Sans:400,700&display=swap']
     }
 });

@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require("browser-sync");
+const cache = require('gulp-cached');
 const cleanCSS = require('gulp-clean-css');
 const cheerio = require('gulp-cheerio');
 const del = require('del');
@@ -59,7 +60,7 @@ const options = {
         style: arg.p + 'src/components/**/*.scss',
         img: arg.p + 'src/components/**/*.{svg,png,jpg}',
         favicon: arg.p + 'src/favicon/*.*',
-        svg: arg.p + 'src/components/**/svg-icons/*.svg',
+        icons: arg.p + 'src/components/svg-icons/*.svg',
         fonts: arg.p + 'src/fonts/**/*',
         uploads: arg.p + 'src/uploads/**/*.*',
         static: arg.p + 'src/media/**/*'
@@ -69,7 +70,7 @@ const options = {
         js: arg.p + 'src/js/**/*.js',
         style: arg.p + 'src/components/**/*.scss',
         img: arg.p + 'src/components/**/*.*',
-        svg: arg.p + 'src/components/**/svg-icons/*.svg',
+        icons: arg.p + 'src/components/svg-icons/*.svg',
         fonts: arg.p + 'src/fonts/**/*',
         uploads: arg.p + 'src/uploads/**/*.*',
         static: arg.p + 'src/media/**/*'
@@ -90,8 +91,8 @@ const options = {
         className: 'icon-%f',
         svgClassname: 'icons-sprite',
         templates: [
-            //path.join(__dirname, arg.p + 'src/' + 'components/svg-icons/icons-template.scss'),
-            path.join(__dirname, arg.p + 'src/' + 'components/svg-icons/icons-template.svg')
+            //path.join(__dirname, arg.p + 'src/components/svg-icons/icons-template.scss'),
+            path.join(__dirname, arg.p + 'src/components/svg-icons/icons-template.html')
         ]
     },
 
@@ -230,31 +231,26 @@ gulp.task('style:build', function () {
 });
 
 //task for style min
-gulp.task('style:min', function () {
-    return gulp.src(options.src.style)
+gulp.task('style:min', () =>
+    gulp.src(options.src.style)
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({debug: true}, function (details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
         }))
         .pipe(gulp.dest(options.dist.css))
-});
+);
 
-gulp.task('html:build', function () {
-    return gulp.src([options.src.html])
+gulp.task('html:build', () =>
+    gulp.src([options.src.html])
         .pipe($.plumber(options.plumber))
         .pipe(rigger())
-        //.pipe($.posthtml(options.posthtml.plugins, options.posthtml.options))
-        //.pipe($.prettify(options.htmlPrettify))
         .pipe(gulp.dest(options.dist.html))
-        .pipe(reload({stream: true}));
-});
+        .pipe(reload({stream: true}))
+);
 
-gulp.task('icons:build', function () {
-    return gulp.src([
-        options.src.svg,
-        '!**/icons-template.svg',
-    ])
+gulp.task('icons:build', () =>
+    gulp.src([options.src.icons])
         .pipe($.plumber(options.plumber))
         .pipe(cheerio({
             /*run: function ($) {
@@ -281,12 +277,11 @@ gulp.task('icons:build', function () {
             }]
         }))
         .pipe($.svgSymbols(options.svgSprite))
-        .pipe($.if(/\.svg$/, $.rename({
-            basename: "icons",
-            extname: ".html"
+        .pipe($.if(/\.html$/, $.rename({
+            basename: "icons"
         })))
-        .pipe($.if(/\.html/, gulp.dest(options.dist.icons)));
-});
+        .pipe($.if(/\.html/, gulp.dest(options.dist.icons)))
+);
 
 gulp.task('image:webp', () =>
     gulp.src([options.src.img,
@@ -294,6 +289,7 @@ gulp.task('image:webp', () =>
         '!' + options.src.favicon],
         {base: arg.p + 'src'}
     )
+        .pipe(cache())
         .pipe(webp({
             quality: 91,
             method: 4
@@ -305,10 +301,10 @@ gulp.task('image:copy', gulp.series('image:webp', () =>
     gulp.src([
         options.src.img,
         options.src.favicon,
-        '!' + options.src.svg,
-        '!**/icons-template.svg'],
+        '!' + options.src.icons],
         {base: arg.p + 'src'}
     )
+        .pipe(cache())
         .pipe(gulp.dest(options.dist.html))
         .pipe(reload({stream: true}))
 ));
@@ -384,7 +380,7 @@ gulp.task('watch', function () {
     $.watch(options.watch.js, gulp.series('js:build'));
     $.watch(options.watch.img, gulp.series('image:copy'));
     $.watch(options.watch.static, gulp.series('static:build'));
-    $.watch(options.watch.svg, gulp.series('icons:build'));
+    $.watch(options.watch.icons, gulp.series('icons:build'));
     $.watch(options.watch.style, gulp.series('style:build'));
 });
 

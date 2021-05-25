@@ -10,6 +10,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
     "normalize.css": "^5.0.0",
     "swiper": "^6.5.7"
   },
