@@ -1,11 +1,3 @@
-@use '../general/vendors/include-media';
-@use '../general/base/variables';
-@use '../general/abstracts/helpers';
-@use '../general/abstracts/classes';
-@use '../general/abstracts/mixins';
-@use '../general/abstracts/responsive-visibility';
-@use '../general/abstracts/responsive-utilities';
-
 // body class when menu is open
 body {
     @include media('<desktop') {

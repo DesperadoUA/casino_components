@@ -1,10 +1,7 @@
-@import'../general/vendors/include-media';
-@import'../general/base/variables';
-@import'../general/abstracts/helpers';
-@import'../general/abstracts/classes';
-@import'../general/abstracts/mixins';
-@import'../general/abstracts/responsive-visibility';
-@import'../general/abstracts/responsive-utilities';
+@import '../general/vendors/include-media';
+@import '../general/base/variables';
+@import '../general/abstracts/helpers';
+@import '../general/abstracts/mixins';
 
 .intro {
     @include adaptive-font(14, 18);

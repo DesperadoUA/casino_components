@@ -402,12 +402,6 @@ template {
 [hidden] {
   display: none; }
 
-/* media queries breakpoints */
-.clearfix:after {
-  content: '';
-  display: table;
-  clear: both; }
-
 .sr-only {
   border: 0 none;
   clip: rect(0px, 0px, 0px, 0px);

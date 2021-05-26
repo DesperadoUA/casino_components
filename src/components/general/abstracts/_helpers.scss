@@ -13,9 +13,7 @@
         clear: both;
     }
 }
-.clearfix {
-    @extend %clearfix;
-}
+
 // transition
 %transition {
     transition: all 0.3s ease-in-out;
