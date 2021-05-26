@@ -64,13 +64,6 @@
             .on('select2:select', function (e) {
                 $(e.target).addClass('selected')
             });
-
-        // after Reg form submit
-        /*$('.form-callback').on('submit', function(e) {
-            $('#modal-callback-done').data('ContentPopup').showPopup();
-
-            e.preventDefault();
-        });*/
     });
 } )( jQuery );
 

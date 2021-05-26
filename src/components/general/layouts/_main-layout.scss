@@ -59,10 +59,12 @@ body, html {
 .main {
     overflow: hidden;
     position: relative;
+    padding-top: 111px;
+    color: var(--theme-cr-txt-alt);
+    background-color: var(--theme-cr-2);
     background-position: 50% 0;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 111px;
 
     @include media('>=desktop') {
         padding-top: 146px;

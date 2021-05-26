@@ -1,13 +1,23 @@
-@use '../general/main';
+@import'../general/vendors/include-media';
+@import'../general/base/variables';
+@import'../general/abstracts/helpers';
+@import'../general/abstracts/classes';
+@import'../general/abstracts/mixins';
+@import'../general/abstracts/responsive-visibility';
+@import'../general/abstracts/responsive-utilities';
 
 .intro {
-    //@include adaptive-font(14, 18);
+    @include adaptive-font(14, 18);
     line-height: 1.8333;
     color: var(--theme-cr-txt-alt);
-    color: $cr-success;
+    margin-bottom: 25px;
+
+    @include media('>=desktop') {
+        margin-bottom: 50px;
+    }
 }
 
 .intro__sub-heading {
-    //@include adaptive-font(24, 32);
+    @include adaptive-font(24, 32);
     line-height: 1.25;
 }

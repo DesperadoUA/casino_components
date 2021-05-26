@@ -1,6 +1,6 @@
 {
-    "name": "Geel Food",
-    "short_name": "Geel Food",
+    "name": "Casino Online",
+    "short_name": "Casino Online",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#281c4b",
+    "background_color": "#281c4b",
     "display": "standalone"
 }

@@ -8,18 +8,18 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: $base-font-size;
     font-family: $base-font-family;
-    line-height: 1.25;
+    line-height: $base-line-height;
     color: var(--theme-cr-txt);
     background-color: var(--theme-bg-1);
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: var(--theme-cr-3);
 
     &:not([class]){
         @include hover {
-            text-decoration: underline;
+            text-decoration: none;
             color: var(--theme-cr-3);
         }
     }
