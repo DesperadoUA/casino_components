@@ -21,33 +21,26 @@
   padding: 0; }
 
 .btn-primary {
-  font-size: 14px;
-  border-radius: 19px;
-  background-color: var(--btn-primary);
-  font-weight: 500;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-weight: 700;
   line-height: 1.5;
   position: relative;
   z-index: 0;
   color: #fff;
-  min-height: 38px;
+  min-height: 50px;
   padding: 5px .9em;
   /* hack for IE11 */ }
   @media (min-width: 992px) {
-    .btn-primary {
-      background-color: var(--btn-primary); }
-      .btn-primary:after {
-        opacity: 1;
-        visibility: visible; } }
+    .btn-primary:hover {
+      background-color: rgba(255, 255, 255, 0.2); } }
   @media all and (-ms-high-contrast: none) {
     .btn-primary *::-ms-backdrop, .btn-primary {
-      height: 38px; } }
+      height: 50px; } }
   .btn-primary.is-disabled, .btn-primary[disabled] {
     background-color: var(--disabled-bg);
     color: var(--disabled-cr); }
-  .btn-primary .icon-arrow-next {
-    font-size: .714em;
-    margin-left: 5px;
-    margin-top: 1px; }
 
 [class*="btn"][disabled] {
   pointer-events: none; }
@@ -263,10 +256,12 @@ img {
   .is-active > .main-nav__link, .main-nav__link.active, .main-nav__link.is-active {
     opacity: 1; }
   @media (min-width: 992px) {
-    .main-nav__link {
+    .main-nav__link:hover {
       opacity: 1; } }
-  .main-nav__link .icon {
-    margin-right: 5px; }
+
+.main-nav__icon {
+  margin-right: 5px;
+  max-width: 18px; }
 
 .navbar__btn {
   position: relative;
@@ -424,6 +419,8 @@ img {
         flex-shrink: 0; }
 
 .offer-item {
+  color: currentColor;
+  text-decoration: none;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -434,6 +431,9 @@ img {
           backdrop-filter: blur(20px);
   max-width: var(--offer-width);
   padding: 17px 5px 18px 9px; }
+  @media (min-width: 992px) {
+    .offer-item:hover {
+      background: rgba(0, 0, 0, 0.4); } }
 
 .offer-item__logo {
   position: absolute;
@@ -497,713 +497,265 @@ img {
     pointer-events: none;
     z-index: 2; }
 
-/*Fill start*/
-[data-fill="0"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="0"] .circle-rating__bar:before {
-    transform: rotate(0deg); }
-  [data-fill="0"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="1"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="1"] .circle-rating__bar:before {
-    transform: rotate(3.6deg); }
-  [data-fill="1"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="2"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="2"] .circle-rating__bar:before {
-    transform: rotate(7.2deg); }
-  [data-fill="2"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="3"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="3"] .circle-rating__bar:before {
-    transform: rotate(10.8deg); }
-  [data-fill="3"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="4"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="4"] .circle-rating__bar:before {
-    transform: rotate(14.4deg); }
-  [data-fill="4"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="5"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="5"] .circle-rating__bar:before {
-    transform: rotate(18deg); }
-  [data-fill="5"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="6"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="6"] .circle-rating__bar:before {
-    transform: rotate(21.6deg); }
-  [data-fill="6"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="7"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="7"] .circle-rating__bar:before {
-    transform: rotate(25.2deg); }
-  [data-fill="7"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="8"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="8"] .circle-rating__bar:before {
-    transform: rotate(28.8deg); }
-  [data-fill="8"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="9"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="9"] .circle-rating__bar:before {
-    transform: rotate(32.4deg); }
-  [data-fill="9"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="10"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="10"] .circle-rating__bar:before {
-    transform: rotate(36deg); }
-  [data-fill="10"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="11"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="11"] .circle-rating__bar:before {
-    transform: rotate(39.6deg); }
-  [data-fill="11"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="12"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="12"] .circle-rating__bar:before {
-    transform: rotate(43.2deg); }
-  [data-fill="12"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="13"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="13"] .circle-rating__bar:before {
-    transform: rotate(46.8deg); }
-  [data-fill="13"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="14"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="14"] .circle-rating__bar:before {
-    transform: rotate(50.4deg); }
-  [data-fill="14"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="15"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="15"] .circle-rating__bar:before {
-    transform: rotate(54deg); }
-  [data-fill="15"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="16"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="16"] .circle-rating__bar:before {
-    transform: rotate(57.6deg); }
-  [data-fill="16"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="17"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="17"] .circle-rating__bar:before {
-    transform: rotate(61.2deg); }
-  [data-fill="17"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="18"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="18"] .circle-rating__bar:before {
-    transform: rotate(64.8deg); }
-  [data-fill="18"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="19"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="19"] .circle-rating__bar:before {
-    transform: rotate(68.4deg); }
-  [data-fill="19"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="20"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="20"] .circle-rating__bar:before {
-    transform: rotate(72deg); }
-  [data-fill="20"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="21"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="21"] .circle-rating__bar:before {
-    transform: rotate(75.6deg); }
-  [data-fill="21"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="22"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="22"] .circle-rating__bar:before {
-    transform: rotate(79.2deg); }
-  [data-fill="22"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="23"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="23"] .circle-rating__bar:before {
-    transform: rotate(82.8deg); }
-  [data-fill="23"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="24"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="24"] .circle-rating__bar:before {
-    transform: rotate(86.4deg); }
-  [data-fill="24"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="25"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="25"] .circle-rating__bar:before {
-    transform: rotate(90deg); }
-  [data-fill="25"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="26"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="26"] .circle-rating__bar:before {
-    transform: rotate(93.6deg); }
-  [data-fill="26"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="27"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="27"] .circle-rating__bar:before {
-    transform: rotate(97.2deg); }
-  [data-fill="27"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="28"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="28"] .circle-rating__bar:before {
-    transform: rotate(100.8deg); }
-  [data-fill="28"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="29"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="29"] .circle-rating__bar:before {
-    transform: rotate(104.4deg); }
-  [data-fill="29"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="30"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="30"] .circle-rating__bar:before {
-    transform: rotate(108deg); }
-  [data-fill="30"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="31"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="31"] .circle-rating__bar:before {
-    transform: rotate(111.6deg); }
-  [data-fill="31"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="32"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="32"] .circle-rating__bar:before {
-    transform: rotate(115.2deg); }
-  [data-fill="32"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="33"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="33"] .circle-rating__bar:before {
-    transform: rotate(118.8deg); }
-  [data-fill="33"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="34"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="34"] .circle-rating__bar:before {
-    transform: rotate(122.4deg); }
-  [data-fill="34"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="35"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="35"] .circle-rating__bar:before {
-    transform: rotate(126deg); }
-  [data-fill="35"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="36"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="36"] .circle-rating__bar:before {
-    transform: rotate(129.6deg); }
-  [data-fill="36"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="37"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="37"] .circle-rating__bar:before {
-    transform: rotate(133.2deg); }
-  [data-fill="37"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="38"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="38"] .circle-rating__bar:before {
-    transform: rotate(136.8deg); }
-  [data-fill="38"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="39"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="39"] .circle-rating__bar:before {
-    transform: rotate(140.4deg); }
-  [data-fill="39"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="40"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="40"] .circle-rating__bar:before {
-    transform: rotate(144deg); }
-  [data-fill="40"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="41"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="41"] .circle-rating__bar:before {
-    transform: rotate(147.6deg); }
-  [data-fill="41"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="42"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="42"] .circle-rating__bar:before {
-    transform: rotate(151.2deg); }
-  [data-fill="42"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="43"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="43"] .circle-rating__bar:before {
-    transform: rotate(154.8deg); }
-  [data-fill="43"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="44"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="44"] .circle-rating__bar:before {
-    transform: rotate(158.4deg); }
-  [data-fill="44"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="45"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="45"] .circle-rating__bar:before {
-    transform: rotate(162deg); }
-  [data-fill="45"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="46"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="46"] .circle-rating__bar:before {
-    transform: rotate(165.6deg); }
-  [data-fill="46"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="47"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="47"] .circle-rating__bar:before {
-    transform: rotate(169.2deg); }
-  [data-fill="47"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="48"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="48"] .circle-rating__bar:before {
-    transform: rotate(172.8deg); }
-  [data-fill="48"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="49"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="49"] .circle-rating__bar:before {
-    transform: rotate(176.4deg); }
-  [data-fill="49"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="50"] .circle-rating__bar {
-  clip: rect(0, 1em, 1em, 0.5em); }
-  [data-fill="50"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="50"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="51"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="51"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="51"] .circle-rating__bar:after {
-    transform: rotate(0deg); }
-
-[data-fill="52"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="52"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="52"] .circle-rating__bar:after {
-    transform: rotate(187.2deg); }
-
-[data-fill="53"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="53"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="53"] .circle-rating__bar:after {
-    transform: rotate(190.8deg); }
-
-[data-fill="54"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="54"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="54"] .circle-rating__bar:after {
-    transform: rotate(194.4deg); }
-
-[data-fill="55"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="55"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="55"] .circle-rating__bar:after {
-    transform: rotate(198deg); }
-
-[data-fill="56"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="56"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="56"] .circle-rating__bar:after {
-    transform: rotate(201.6deg); }
-
-[data-fill="57"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="57"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="57"] .circle-rating__bar:after {
-    transform: rotate(205.2deg); }
-
-[data-fill="58"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="58"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="58"] .circle-rating__bar:after {
-    transform: rotate(208.8deg); }
-
-[data-fill="59"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="59"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="59"] .circle-rating__bar:after {
-    transform: rotate(212.4deg); }
-
-[data-fill="60"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="60"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="60"] .circle-rating__bar:after {
-    transform: rotate(216deg); }
-
-[data-fill="61"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="61"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="61"] .circle-rating__bar:after {
-    transform: rotate(219.6deg); }
-
-[data-fill="62"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="62"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="62"] .circle-rating__bar:after {
-    transform: rotate(223.2deg); }
-
-[data-fill="63"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="63"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="63"] .circle-rating__bar:after {
-    transform: rotate(226.8deg); }
-
-[data-fill="64"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="64"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="64"] .circle-rating__bar:after {
-    transform: rotate(230.4deg); }
-
-[data-fill="65"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="65"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="65"] .circle-rating__bar:after {
-    transform: rotate(234deg); }
-
-[data-fill="66"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="66"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="66"] .circle-rating__bar:after {
-    transform: rotate(237.6deg); }
-
-[data-fill="67"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="67"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="67"] .circle-rating__bar:after {
-    transform: rotate(241.2deg); }
-
-[data-fill="68"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="68"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="68"] .circle-rating__bar:after {
-    transform: rotate(244.8deg); }
-
-[data-fill="69"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="69"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="69"] .circle-rating__bar:after {
-    transform: rotate(248.4deg); }
-
-[data-fill="70"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="70"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="70"] .circle-rating__bar:after {
-    transform: rotate(252deg); }
-
-[data-fill="71"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="71"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="71"] .circle-rating__bar:after {
-    transform: rotate(255.6deg); }
-
-[data-fill="72"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="72"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="72"] .circle-rating__bar:after {
-    transform: rotate(259.2deg); }
-
-[data-fill="73"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="73"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="73"] .circle-rating__bar:after {
-    transform: rotate(262.8deg); }
-
-[data-fill="74"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="74"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="74"] .circle-rating__bar:after {
-    transform: rotate(266.4deg); }
-
-[data-fill="75"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="75"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="75"] .circle-rating__bar:after {
-    transform: rotate(270deg); }
-
-[data-fill="76"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="76"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="76"] .circle-rating__bar:after {
-    transform: rotate(273.6deg); }
-
-[data-fill="77"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="77"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="77"] .circle-rating__bar:after {
-    transform: rotate(277.2deg); }
-
-[data-fill="78"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="78"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="78"] .circle-rating__bar:after {
-    transform: rotate(280.8deg); }
-
-[data-fill="79"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="79"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="79"] .circle-rating__bar:after {
-    transform: rotate(284.4deg); }
-
-[data-fill="80"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="80"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="80"] .circle-rating__bar:after {
-    transform: rotate(288deg); }
-
-[data-fill="81"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="81"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="81"] .circle-rating__bar:after {
-    transform: rotate(291.6deg); }
-
-[data-fill="82"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="82"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="82"] .circle-rating__bar:after {
-    transform: rotate(295.2deg); }
-
-[data-fill="83"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="83"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="83"] .circle-rating__bar:after {
-    transform: rotate(298.8deg); }
-
-[data-fill="84"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="84"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="84"] .circle-rating__bar:after {
-    transform: rotate(302.4deg); }
-
-[data-fill="85"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="85"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="85"] .circle-rating__bar:after {
-    transform: rotate(306deg); }
-
-[data-fill="86"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="86"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="86"] .circle-rating__bar:after {
-    transform: rotate(309.6deg); }
-
-[data-fill="87"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="87"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="87"] .circle-rating__bar:after {
-    transform: rotate(313.2deg); }
-
-[data-fill="88"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="88"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="88"] .circle-rating__bar:after {
-    transform: rotate(316.8deg); }
-
-[data-fill="89"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="89"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="89"] .circle-rating__bar:after {
-    transform: rotate(320.4deg); }
-
-[data-fill="90"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="90"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="90"] .circle-rating__bar:after {
-    transform: rotate(324deg); }
-
-[data-fill="91"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="91"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="91"] .circle-rating__bar:after {
-    transform: rotate(327.6deg); }
-
-[data-fill="92"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="92"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="92"] .circle-rating__bar:after {
-    transform: rotate(331.2deg); }
-
-[data-fill="93"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="93"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="93"] .circle-rating__bar:after {
-    transform: rotate(334.8deg); }
-
-[data-fill="94"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="94"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="94"] .circle-rating__bar:after {
-    transform: rotate(338.4deg); }
-
-[data-fill="95"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="95"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="95"] .circle-rating__bar:after {
-    transform: rotate(342deg); }
-
-[data-fill="96"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="96"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="96"] .circle-rating__bar:after {
-    transform: rotate(345.6deg); }
-
-[data-fill="97"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="97"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="97"] .circle-rating__bar:after {
-    transform: rotate(349.2deg); }
-
-[data-fill="98"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="98"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="98"] .circle-rating__bar:after {
-    transform: rotate(352.8deg); }
-
-[data-fill="99"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="99"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="99"] .circle-rating__bar:after {
-    transform: rotate(356.4deg); }
-
-[data-fill="100"] .circle-rating__bar {
-  clip: rect(auto, auto, auto); }
-  [data-fill="100"] .circle-rating__bar:before {
-    transform: rotate(180deg); }
-  [data-fill="100"] .circle-rating__bar:after {
-    transform: rotate(360deg); }
+.casinos {
+  padding-bottom: 56px; }
+
+.casinos__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  counter-reset: counter;
+  margin-left: -23px;
+  margin-right: -23px;
+  margin-bottom: 16px; }
+  .casinos__container:after {
+    content: '';
+    -ms-flex: auto;
+        flex: auto; }
+  .casinos__container .casino-item {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-preferred-size: calc(33.333% - 46px);
+        flex-basis: calc(33.333% - 46px);
+    margin-left: 23px;
+    margin-right: 23px;
+    position: relative;
+    counter-increment: counter; }
+    .casinos__container .casino-item:before {
+      content: counter(counter);
+      position: absolute;
+      z-index: 2;
+      border-radius: 50%;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      background: rgba(0, 0, 0, 0.35);
+      font-size: 12px;
+      line-height: 24px;
+      font-weight: 700;
+      color: #fff;
+      top: 7px;
+      left: 7px; }
+
+.casino-item {
+  color: #fff;
+  max-width: 344px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  margin-bottom: 31px; }
+
+.casino-item__top {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 18px; }
+
+.casino-item__logo {
+  border-radius: 14px 0 0 14px; }
+
+.casinos-rating {
+  width: 112px;
+  border-radius: 0 14px 14px 0;
+  background-color: #1c0e27;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-top: 15px; }
+
+.casinos-rating__chart-box {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  margin-bottom: 5px; }
+
+.casinos-rating__chart {
+  display: block; }
+
+.casinos-rating__circle-bg {
+  fill: none;
+  stroke: rgba(0, 255, 102, 0.23);
+  stroke-width: 2; }
+
+.casinos-rating__circle {
+  fill: none;
+  stroke-width: 2;
+  stroke: var(--cr-success);
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards; }
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100; } }
+
+.casinos-rating__percentage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 24px;
+  text-anchor: middle; }
+
+.casinos-rating__txt {
+  font-size: 14px; }
+
+.casino-item__content {
+  padding-left: 8px;
+  padding-right: 8px; }
+
+.casino-param {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-bottom: 18px; }
+
+.casino-param__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  text-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: end;
+      justify-content: flex-end; }
+  .casino-param__item.disabled {
+    opacity: .5; }
+
+.casino-param__img {
+  margin-bottom: 2px;
+  max-width: 21px; }
+
+.casino-param__txt {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: .75; }
+
+.casino-bonuses {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-bottom: 28px; }
+  .casino-bonuses .casino-bonus {
+    -ms-flex-preferred-size: calc(50% - 8px);
+        flex-basis: calc(50% - 8px); }
+
+.casino-bonus {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-weight: 700;
+  max-width: 160px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 18px; }
+
+.casino-bonus__value {
+  font-size: 22px;
+  line-height: 1.5;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.casino-bonus__ttl {
+  font-size: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 15px; }
+
+.casino-bonus__wager {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  line-height: 25px;
+  border-radius: 0 0 6px 6px; }
+
+.casino-item__btns {
+  margin-left: -9px;
+  margin-right: -9px;
+  overflow: hidden;
+  border-radius: 0 0 14px 14px; }
+
+.casino-item__btn {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 40px;
+  text-decoration: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .casino-item__btn.--green {
+    background-color: var(--btn-secondary); }
+    .casino-item__btn.--green:hover {
+      background-color: #009c3e; }
+  .casino-item__btn.--blue {
+    background: linear-gradient(0deg, #0194ff, #0194ff), #01b94a; }
+    .casino-item__btn.--blue:hover {
+      background: linear-gradient(0deg, #0475dd, #0475dd), #01b94a; }
+
+.casinos__cta {
+  text-align: center; }
+  .casinos__cta .btn-primary {
+    min-width: 230px; }
+
+.categories {
+  padding-left: var(--side-gutters);
+  padding-right: var(--side-gutters);
+  margin-bottom: 25px; }
+
+.categories__container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(var(--container) - var(--side-gutters) * 2);
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 14px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.categories__link {
+  text-align: center;
+  -ms-flex: 1 1 0%;
+      flex: 1 1 0%;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 27px;
+  padding: 7px 10px;
+  border-radius: 14px; }
+  @media (min-width: 992px) {
+    .categories__link:hover {
+      background: rgba(0, 0, 0, 0.2); } }
+  .categories__link.active, .categories__link.is-active {
+    background-color: var(--btn-primary); }
 
 .cms {
   background-color: #fff;
