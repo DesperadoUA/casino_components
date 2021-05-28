@@ -75,12 +75,15 @@ body {
     }
 
     @media (min-width: 992px) {
-        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
     }
+}
 
-    .icon {
-        margin-right: 5px;
-    }
+.main-nav__icon {
+    margin-right: 5px;
+    max-width: 18px;
 }
 
 .navbar__btn {

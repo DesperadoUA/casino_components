@@ -34,6 +34,8 @@ $bar-thin: 5px;
 }
 
 .offer-item {
+    color: currentColor;
+    text-decoration: none;
     display: flex;
     align-items: center;
     border-radius: 14px;
@@ -41,6 +43,12 @@ $bar-thin: 5px;
     backdrop-filter: blur(20px);
     max-width: var(--offer-width);
     padding: 17px 5px 18px 9px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background: rgba(#000, .4);
+        }
+    }
 }
 
 .offer-item__logo {
@@ -113,24 +121,5 @@ $bar-thin: 5px;
         clip: rect(0, $dim/2, $dim, 0);
         pointer-events: none;
         z-index: 2;
-    }
-}
-
-/*Fill start*/
-@for $i from 0 through 100 {
-    &[data-fill="#{$i}"] {
-        $rotate: 3.6deg * $i;
-
-        .circle-rating__bar {
-            clip: if(($i<51), rect(0, $dim, $dim, $dim/2), rect(auto, auto, auto));
-
-            &:before {
-                transform: rotate(if(($i<51), ($rotate), 180deg));
-            }
-
-            &:after {
-                transform: rotate(if(($i>51), ($rotate), 0deg));
-            }
-        }
     }
 }
