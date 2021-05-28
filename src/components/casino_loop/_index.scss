@@ -61,7 +61,7 @@
     border-radius: 14px 0 0 14px;
 }
 
-.casinos-rating {
+.casino-item__rating {
     width: 112px;
     border-radius: 0 14px 14px 0;
     background-color: #1c0e27;
@@ -72,52 +72,9 @@
     padding-top: 15px;
 }
 
-.casinos-rating__chart-box {
-    position: relative;
-    width: 74px;
-    height: 74px;
-    margin-bottom: 5px;
-
-}
-
-.casinos-rating__chart {
-    display: block;
-}
-
-.casinos-rating__circle-bg {
-    fill: none;
-    stroke: rgba(#00ff66, .23);
-    stroke-width: 2;
-}
-
-.casinos-rating__circle {
-    fill: none;
-    stroke-width: 2;
-    stroke: var(--cr-success);
-    stroke-linecap: round;
-    animation: progress 1s ease-out forwards;
-}
-
-@keyframes progress {
-    0% {
-        stroke-dasharray: 0 100;
-    }
-}
-
-.casinos-rating__percentage {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 800;
-    font-size: 24px;
-    text-anchor: middle;
-}
-
 .casinos-rating__txt {
     font-size: 14px;
 }
-
 
 .casino-item__content {
     padding-left: 8px;
