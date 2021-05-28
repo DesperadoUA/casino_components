@@ -1,0 +1,14 @@
+.main {
+    overflow: hidden;
+    position: relative;
+    padding-top: 111px;
+    background-color: var(--theme-cr-2);
+    background-image: var(--bg-main);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+
+    @media (min-width: 992px) {
+        padding-top: 146px;
+    }
+}
+

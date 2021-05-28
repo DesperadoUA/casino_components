@@ -16,16 +16,9 @@
     <meta name="theme-color" content="#281c4b">
 
     <title>Online Casino</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
-    <link rel="stylesheet" href="components/general/main.css">
-    <link rel="stylesheet" href="components/header/header.css">
-    <link rel="stylesheet" href="components/intro/intro.css">
-    <link rel="stylesheet" href="components/best-offers/best-offers.css">
-    <link rel="stylesheet" href="components/cms/cms.css">
-    <link rel="stylesheet" href="components/footer/footer.css">
-    <link rel="stylesheet" href="components/modals/modal.css">
+    <link rel="stylesheet" href="components/styles.css">
 </head>
-<body class="webp">
+<body>
 <style type="text/css">
     :root {
         /* container width */
@@ -34,88 +27,66 @@
 
         /* Theme color */
         --theme-cr-1:       #302552;
-        --theme-cr-2:       #281c4b;
+        --theme-cr-2:       #281c4c;
         --theme-cr-3:       #1f4fad;
         --theme-cr-txt:     var(--theme-cr-2);
         --theme-cr-txt-alt: #fff;
         --cr-success:       #00ff66;
         --btn-primary:      #0194ff;
         --btn-secondary:    #01b94a;
-        --table-head:         #5f63c0;
+        --table-head:       #5f63c0;
+        --disabled-bg:               #fafbfc;
+        --disabled-cr:               #c7ccd8;
+
+        /* Fonts */
+        --base-font-size:   16px;
+        --base-line-height:  1.6;
+        --base-font-family: 'Open Sans', Arial, sans-serif;
+        --alt-font-family:  'Roboto', Arial, sans-serif;
 
         /* Theme bg-color */
         --theme-bg-1:       #f5f8ff;
 
         /* Theme images */
-        --bg-main:          url(img/bg-main.jpg);
-        --bg-main-webp:     url(img/bg-main.webp);
+        --bg-main:          url(../img/bg-main.jpg);
+        --bg-main-webp:     url(../img/bg-main.webp);
+
+        --transition-default: .27s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        --maxWidth: 1440; /* max screen size for adaptive font mixin */
+        --side-gutters: 15px;
     }
 </style>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="width: 0; height: 0; position: absolute;"  class="icons-sprite">
-    <symbol id="icon-bonus" viewBox="0 0 512 549">
-        <title>Icon bonus</title>
-        <path d="M35.5 534.7c-8.7-3.4-17-11.2-20.7-19.4-3-6.8-3-17.9.1-24.9 2.8-6.3 9.9-13.4 16.9-16.9 4.2-2.1 5.3-3.1 5.3-5.1 0-9.3 10.3-129.2 12-138.6 6.3-36.6 18.2-67.3 37.8-97.3 20.7-31.6 51.6-62.8 88.6-89.4l11.7-8.4 45.9 1.2c49.9 1.3 49.8 1.3 54.8-4.1 6-6.5 3.8-17.1-4.5-22-2.2-1.3-16.2-3.6-50.9-8.3-26.3-3.6-48.8-6.9-49.9-7.4-1.8-.7-2.8-4.8-8.3-34.7-3.4-18.6-6.2-34.4-6.2-35.1 0-1 5.5-1.3 23.9-1.3h23.9l9.1-11.5L234 0h110.6l-10.3 62.3c-5.7 34.2-10.6 64.5-10.9 67.3l-.6 5.1 12.9 9.4c33.1 24.3 58 48.1 78.4 75.2 26.7 35.4 43.7 76.6 50.3 121.8 1.3 9.1 10.6 120.6 10.6 127.4 0 2 .9 2.9 4.5 4.5 6.4 2.8 14.8 11.2 17.6 17.4 3.1 7 3.2 18.1.1 24.9-3.1 6.9-10.7 14.6-17.8 17.9l-6 2.9-217.4-.2c-164.2 0-218.2-.3-220.5-1.2zm197.2-105.4l23.2-11.8 23.6 11.8c26.4 13.1 28.7 13.8 33.6 8.8 1.9-1.9 2.9-4 2.9-5.8 0-1.6-2-14-4.5-27.7l-4.5-24.9 17.9-18.3c20-20.4 21.7-23.1 18.6-29.7-1-2.1-3-4.2-4.9-5-1.7-.8-14-2.9-27.3-4.7l-24.1-3.3-11.4-23c-6.3-12.7-12.5-23.8-13.8-24.9-2.9-2.3-8.9-2.5-12-.3-1.4 1-6.8 10.7-13.8 24.9l-11.4 23.2-24.2 3.3c-13.3 1.8-25.6 3.9-27.4 4.7-4.1 1.9-6.6 7.1-5.8 11.8.5 2.9 4.2 7.1 19 22.4l18.4 18.8-4.5 24.9c-2.5 14.1-4.2 26.1-3.9 27.6.9 4.2 6 8.7 9.8 8.8 2.2.1 11.2-3.9 26.5-11.6z"/>
-    </symbol>
-    <symbol id="icon-check" viewBox="0 0 18 15.8">
-        <title>Icon check</title>
-        <path d="M7.1 15.8L.4 8.9c-.6-.6-.6-1.5 0-2.1.6-.6 1.6-.6 2.2 0l4.3 4.4L15.4.5c.5-.6 1.5-.8 2.1-.2.6.5.8 1.5.2 2.1L7.1 15.8z"/>
-    </symbol>
-    <symbol id="icon-cherry" viewBox="0 0 489.7 511.8">
-        <title>Icon cherry</title>
-        <path d="M150 510.9c-30-3.8-57.6-17.8-80.2-40.3-20.6-20.6-33-44.6-38-73.6-2-11.4-1.4-37.4 1-48.3 7.1-31.2 25.6-59.7 51.5-79.3 9-6.8 28.1-16.8 39.1-20.4 8.3-2.8 22.5-5.9 26.8-6 2.4 0 3.3-.5 3.3-1.8 0-5.2 3.3-28.6 5.5-39 4.2-19.7 12.1-42.6 20.6-59.4 1.6-3.2 2.9-6 2.9-6.2s-3.9 1.1-8.8 3.1C136 154.9 95.1 152.9 57.4 134c-17.7-8.9-39.5-25.2-53.9-40.3L0 90l3.4-3.6c20.9-22 49.8-40.9 75.6-49.3 47-15.3 97-4.8 139.7 29.5l10.1 8.1 6.9-6.1c31.4-28.1 67.9-48.2 107.2-59C368.6 2.5 390.2 0 425.8 0h23.9l-19 19.3c-19 19.2-27.5 29.3-35.2 42-10.1 16.5-18.3 36-22.7 54-4.8 19.9-5.5 29.1-5.5 80.1v47.2l7.8 1.1c35.8 5.3 71.2 27.9 92.2 58.8 14.9 21.9 22.4 46.5 22.3 73.5 0 27.7-7.3 51.7-22.8 75-6.6 10-27 30.4-36.9 37-15.1 10.1-34.6 18.1-52.4 21.7-12.2 2.4-39.5 2.4-51.2 0-29.1-6.1-51.9-18.4-72.6-39.1-20.6-20.6-33-44.6-38-73.6-2-11.4-1.4-37.4 1-48.3 7.1-31.2 25.6-59.7 51.5-79.3 9-6.8 28.1-16.8 39.1-20.4 7.8-2.6 22.5-5.9 26.3-6h2.8v-42.3c0-47 1-64.3 4.5-82.8 5.4-27.6 16.6-54.8 32.1-77.9 2.4-3.6 4-6.7 3.4-6.9-1.5-.5-16.3 2.7-27.6 5.9-65.6 18.9-120.2 67-147.1 129.7-8.6 20-15.3 45.8-16.9 65.1-.7 7.9-.6 8.1 1.7 8.6 1.3.3 6 1.3 10.4 2.2 9.5 2 22.8 6.6 30.8 10.6l5.8 2.9-8.1 9.2c-22.6 25.8-36.2 55.1-40.5 87.4-6.3 47.4 8.3 94.3 41.1 131.7l7.5 8.5-6.2 3.1c-9.7 4.9-28.4 10.7-40.1 12.4-11.4 1.7-26.1 1.9-37.2.5zm-27.3-141.1c.8-8 5.2-17 11.8-24.2 6.3-6.9 16.7-12.3 26.8-13.9l7.1-1.1v-29.8l-7.2.7c-36.8 3.4-66.1 32-69.4 67.7l-.6 6.9h31l.5-6.3zm184 0c.8-8 5.2-17 11.8-24.2 6.3-6.9 16.7-12.3 26.8-13.9l7.1-1.1v-29.8l-7.2.7c-36.8 3.4-66.1 32-69.4 67.7l-.6 6.9h31l.5-6.3z"/>
-    </symbol>
-    <symbol id="icon-cross" viewBox="0 0 13.6 13.6">
-        <title>Icon cross</title>
-        <path d="M.4.4C1-.1 2-.1 2.6.4L13.2 11c.6.6.6 1.5 0 2.1-.6.6-1.5.6-2.1 0L.4 2.6C-.1 2-.1 1 .4.4z"/><path d="M13.2.4c.6.6.6 1.5 0 2.1L2.6 13.2c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1L11 .4c.6-.5 1.6-.5 2.2 0z"/>
-    </symbol>
-    <symbol id="icon-fire" viewBox="0 0 482.7 652.6">
-        <title>Icon fire</title>
-        <path d="M212.3 651.5c-71.3-9-133.7-47.3-173.2-106.2C31 533.2 18.4 508 13.4 494 5.7 472.3 1.3 449.4.1 425.5c-1-20.6 3.8-62.5 10.1-88 9.5-38.6 25.1-72.6 45.8-99.8C61.8 230 79.4 211 80.6 211c.3 0 .7 8.4.7 18.8.3 54.1 12.3 94.5 34.9 116.8 5.4 5.4 15.1 12.2 16 11.3.2-.2-1.4-7.8-3.5-16.9-8-34.1-10.3-52.8-10.3-81.4 0-43.2 8.2-78.3 27.3-117.1 20.1-40.8 49.6-77.3 91.2-113 10.8-9.3 37-29.5 38.2-29.5.3 0-1 3.3-2.8 7.4-16.5 35.7-16.4 73.1.2 100.9 6.5 10.9 16 20.4 45.9 45.5 73.8 62.2 102.9 92.8 128.5 135.3 16.9 28.1 27.4 55.2 33.1 86 2.9 15.6 3.7 52.1 1.4 69.8-10 78.7-59.3 147.4-131.1 182.7-24.3 12-46.7 19.1-72 23-15 2.2-51.3 2.8-66 .9zm50.5-74.5c43.2-5.2 81.6-22.7 108.6-49.5 11.6-11.5 17.9-20.4 26.4-37.4 10.1-20.1 16-37.5 19.5-57.6 2.2-12.2 2.2-34.3 0-47-8.8-51.8-46.5-98.3-107.9-133.2-6.1-3.4-11.2-6.1-11.4-5.9s1.7 3.8 4.2 8.1c25 42.4 37 85.8 33.6 122-2 21-6.8 37.6-16.2 55.5-12.6 24.1-33.9 47.5-60.9 66.9-4.7 3.4-8.8 6.1-9.2 6.1-.4 0 1.1-2.3 3.3-5.2 9.3-12.2 16.5-31.3 19.6-52 2-13.7 1.4-37.3-1.4-51.3l-1.8-9-1.2 5c-9.9 39.9-31.5 73.8-62.2 97.6-20.2 15.7-48.3 29.3-74.5 35.9-4.9 1.3-9.4 2.6-9.8 3-.5.4 2.5 3.5 6.5 6.9 25.6 21.6 57.8 36 90.6 40.5 11.9 1.7 32.9 1.9 44.2.6z"/>
-    </symbol>
-    <symbol id="icon-search" viewBox="0 0 345 344.6">
-        <title>Icon search</title>
-        <path d="M319.3 343.2c-1.6-.7-21-19.4-43-41.5s-40.3-40.1-40.6-40.1c-.3 0-4.4 2.5-9 5.6-15.4 10.2-32.8 17.5-51.7 21.7-14.4 3.2-44.3 3.1-59.2-.1-28.9-6.3-52.2-19.2-73.6-40.6-17.7-17.8-27.9-34.4-35.5-57.5-5.7-17.3-7.3-30-6.7-50.5 1-29.4 8.1-51.7 24.5-76.5 7.3-11 24.8-29.1 35.9-37C76.2 15.5 97.4 6.2 116.9 2c12-2.6 44.8-2.7 56.9-.1 29.9 6.4 53.5 19.1 75.1 40.7 21.4 21.3 34.6 45.9 40.6 75.8 2.7 13.2 2.4 43.3-.5 56.5-4.3 19.3-11.4 36.4-21.6 51.6-3.1 4.6-5.6 8.6-5.6 9s18.4 19.1 40.9 41.7c44.4 44.5 43.1 42.8 41.8 52.6-1.4 10.8-15 18-25.2 13.4zM167.2 253c62-11.7 101.5-76.2 84.1-137.2-11.9-41.6-46.6-72.3-89.2-78.7-12.3-1.9-20.2-1.9-32.6 0C105.7 40.7 85.3 51 68.2 68c-52.8 52.6-38.4 142 28.1 175.1 23.1 11.5 45.6 14.7 70.9 9.9z"/>
-    </symbol>
-    <symbol id="icon-spin" viewBox="0 0 487 486.9">
-        <title>Icon spin</title>
-        <path d="M223.1 486.4c-56.2-5.3-106.8-29.3-147.6-69.9-45-44.8-71.4-104.9-75.3-171-.5-8.2-.4-8.1 1.9 5.5 6.5 37.4 19.8 71 40.3 101.5C103.2 443.1 209.7 484 304 453c6.1-2 16.9-6.5 24-9.9 53.4-26 91.7-73.5 108.1-134 8.4-31 9.7-71.2 3.3-102.3-16.7-81.8-83-146.5-162.7-158.7-14.5-2.2-39-2-53.7.5-51.4 8.8-94.6 41.4-117.5 88.5-13.6 28-19.9 61.7-17.2 92.3 2.6 29.7 10 51.4 25.8 75 34 51.1 94 76.3 148.6 62.4 45.5-11.6 78.8-47.5 89.5-96.4 1.4-6.3 1.8-12.7 1.8-27.3 0-16.5-.3-20.2-2.3-27.9-4.5-17.6-14.3-34.7-27.1-47.6-12.5-12.5-28.2-21.7-44.6-26-10.8-2.9-30.8-3.1-41-.5-35.4 9.2-59.5 39-62.1 77-.9 12.3.8 22.4 5.1 31.2 8.7 17.9 24.8 28.4 43.5 28.4 19.8 0 35.9-11.3 40.6-28.6 1.5-5.6 1.6-7.5.6-12.7-2.3-12.4-10.2-18.8-23.2-18.8-8.8 0-14.7 2.8-19.8 9.4l-2.2 2.9v-4.1c0-16 9-30.7 22.4-36.8 8.1-3.7 20.8-4.5 30.2-1.9 12.7 3.4 24.8 14 31 27 9.4 19.9 5.7 50.9-8.8 73.3-20.2 31.1-57.6 44.1-94 32.6-32.2-10.1-57.9-37.9-67-72.2-2.6-10-3.6-32.4-1.9-45.6 5.4-42.5 30.7-78.9 67.8-97.5 27.8-13.9 63.4-15.8 95.4-5.1 22.9 7.6 38.4 17.4 56.9 36 27.5 27.5 41.8 58.4 45 97.1 4.1 49.8-12.8 99.3-45.7 133.9-26.5 27.9-58.9 44.3-96.7 49.1-13.8 1.7-41.1.7-54-2-36.8-7.8-67.9-24.6-95.5-51.4-19.3-18.8-30.7-34.4-42.2-57.9-14.6-29.8-20.9-57.7-20.9-92.7 0-35.4 6.9-66.5 21.5-96.8C95 52.7 150 12 217.6 1.8c15.6-2.4 45.3-2.3 61 .1 50.8 7.8 96.9 31.4 134.5 69.1 37.6 37.6 62.3 85.2 71.6 138.2 7.3 41.4-3 97.7-26.2 143-36.8 71.9-105 121.7-182 132.8-13.6 1.8-40.4 2.6-53.4 1.4z"/>
-    </symbol>
-    <symbol id="icon-star" viewBox="0 0 485.9 461.5">
-        <title>Icon star</title>
-        <path d="M92.3 459.6c.3-1.3 6.6-37.9 14-81.4s13.7-80 14-81.1c.4-1.7-6.4-8.8-37.2-39C10.7 187.5-.3 176.5 0 176.2c.2-.2 37.9-5.8 83.8-12.5s83.5-12.2 83.5-12.3C168.7 148 242.3-.2 242.5 0c.2.2 16.9 34 37.3 75.2 27.6 55.8 37.6 75.2 39.3 76 1.3.6 39.3 6.4 84.6 12.9L486 176l-4.8 4.6C393.9 265.2 364 294.9 364.4 296.9c1.2 4.8 28.3 164.2 28 164.5-.2.2-33.8-17.3-74.6-38.8-40.9-21.5-74.8-39.1-75.4-39.1-.6 0-34.1 17.4-74.5 38.6s-74 38.8-74.7 39.1c-1.1.6-1.3.1-.9-1.6zM237.5 291l5.1-2.6 18.9 10c12.1 6.4 19 9.6 19.2 8.8.2-.7-1.3-10.3-3.2-21.4l-3.5-20.1 15.5-15.2c10.2-10 15.1-15.4 14.2-15.9-.7-.4-10.3-1.9-21.4-3.4l-20.1-2.8-9.4-19c-5.2-10.4-9.8-19.2-10.2-19.4-.4-.3-5 8.2-10.2 18.9l-9.5 19.4-19.8 2.8c-10.9 1.5-20.6 3.1-21.6 3.5-1.5.5 1.1 3.5 13.7 15.8l15.5 15.2-3.5 20c-1.9 11-3.5 20.7-3.5 21.5 0 1.1 4-.6 14.3-6 7.9-4.1 16.6-8.7 19.5-10.1z"/>
-    </symbol>
-</svg>
+<header class="header">
+    <div class="header__container container">
+        <a href="">
+            <img class="logo" src="img/logo.svg" width="199" height="35" alt="Casino Online">
+        </a>
 
-<main class="main">
-    <header class="header">
-        <div class="header__container container">
-            <a href="">
-                <img class="logo" src="components/header/img/logo.svg" alt="Casino Online">
-            </a>
-    
-            <nav class="main-nav mobile-menu">
-                <ul class="main-nav__list">
-                    <li><a href="" class="is-active main-nav__link"><svg class="icon icon-bonus"><use xlink:href="#icon-bonus"></use></svg>Бонусы</a></li>
-                    <li><a href="" class="main-nav__link"><svg class="icon icon-spin"><use xlink:href="#icon-spin"></use></svg>Фри Спины</a></li>
-                    <li><a href="" class="main-nav__link"><svg class="icon icon-cherry"><use xlink:href="#icon-cherry"></use></svg>Слоты</a></li>
-                    <li><a href="" class="main-nav__link"><svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>Обзор казино</a></li>
-                    <li><a href="" class="main-nav__link"><svg class="icon icon-fire"><use xlink:href="#icon-fire"></use></svg>Предложения</a></li>
-                </ul>
-            </nav>
-    
-            <div class="search">
-                <button type="button" class="btn-default search__cta"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></button>
-            </div>
-    
-            <div class="navbar__btn js--menu-trigger" aria-expanded="false" aria-label="Menu Button" role="button">
-                <span class="bar"></span>
-            </div>
+        <nav class="main-nav mobile-menu">
+            <ul class="main-nav__list">
+                <li><a href="" class="is-active main-nav__link"><svg class="icon icon-bonus"><use xlink:href="#icon-bonus"></use></svg>Бонусы</a></li>
+                <li><a href="" class="main-nav__link"><svg class="icon icon-spin"><use xlink:href="#icon-spin"></use></svg>Фри Спины</a></li>
+                <li><a href="" class="main-nav__link"><svg class="icon icon-cherry"><use xlink:href="#icon-cherry"></use></svg>Слоты</a></li>
+                <li><a href="" class="main-nav__link"><svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>Обзор казино</a></li>
+                <li><a href="" class="main-nav__link"><svg class="icon icon-fire"><use xlink:href="#icon-fire"></use></svg>Предложения</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <button type="button" class="btn-default search__cta"><svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg></button>
         </div>
-    </header>
+
+        <div class="navbar__btn js--menu-trigger" aria-expanded="false" aria-label="Menu Button" role="button">
+            <span class="bar"></span>
+        </div>
+    </div>
+</header>
+<main class="main">
     <section class="intro">
-        <div class="container--cms text-center">
-            <h1>Online Casino</h1>
+        <div class="container--cms">
+            <h1 class="intro__heading">Online Casino</h1>
             <p class="intro__sub-heading">Complete guide to the best Canadian casinos</p>
             <p>CanadaCasino is your guide to all things online casino! Here, you will find honest casino and game reviews, together with useful guides that have been expertly put together to help you enjoy the best online casino experience from Canada!</p>
         </div>
@@ -129,9 +100,9 @@
                     <div class="offer-item">
                         <div class="circle-rating" data-fill="75" style="--circle-cr: #236054; --bar-cr: #00ff66;">
                             <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/slotoking.webp">
-                                <source type="image/png" srcset="components/best-offers/img/slotoking.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/slotoking.png" alt="">
+                                <source type="image/webp" srcset="img/slotoking.webp">
+                                <source type="image/png" srcset="img/slotoking.png">
+                                <img class="offer-item__logo" src="img/slotoking.png" alt="">
                             </picture>
                             <div class="circle-rating__bar"></div>
                         </div>
@@ -145,9 +116,9 @@
                     <div class="offer-item">
                         <div class="circle-rating" data-fill="70" style="--circle-cr: #236054; --bar-cr: #00ff66;">
                             <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/reel.webp">
-                                <source type="image/png" srcset="components/best-offers/img/reel.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/reel.png" alt="">
+                                <source type="image/webp" srcset="img/reel.webp">
+                                <source type="image/png" srcset="img/reel.png">
+                                <img class="offer-item__logo" src="img/reel.png" alt="">
                             </picture>
                             <div class="circle-rating__bar"></div>
                         </div>
@@ -161,9 +132,9 @@
                     <div class="offer-item">
                         <div class="circle-rating" data-fill="45" style="--circle-cr: rgba(255, 0, 0, 0.23); --bar-cr: #f00;">
                             <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/777.webp">
-                                <source type="image/png" srcset="components/best-offers/img/777.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/777.png" alt="">
+                                <source type="image/webp" srcset="img/777.webp">
+                                <source type="image/png" srcset="img/777.png">
+                                <img class="offer-item__logo" src="img/777.png" alt="">
                             </picture>
                             <div class="circle-rating__bar"></div>
                         </div>
@@ -177,9 +148,9 @@
                     <div class="offer-item">
                         <div class="circle-rating" data-fill="50" style="--circle-cr: rgba(255, 199, 0, 0.23); --bar-cr: #ffc700;">
                             <picture>
-                                <source type="image/webp" srcset="components/best-offers/img/unibet.webp">
-                                <source type="image/png" srcset="components/best-offers/img/unibet.png">
-                                <img class="offer-item__logo" src="components/best-offers/img/unibet.png" alt="">
+                                <source type="image/webp" srcset="img/unibet.webp">
+                                <source type="image/png" srcset="img/unibet.png">
+                                <img class="offer-item__logo" src="img/unibet.png" alt="">
                             </picture>
                             <div class="circle-rating__bar"></div>
                         </div>
@@ -193,141 +164,130 @@
             </div>
         </div>
     </section>
-</main>
-
-<div class="container">
     <div class="cms">
-        <h2>Our Team of Casino Experts Are Here For You!</h2>
-        <p>Here at CanadaCasino, we pride ourselves on providing honest casino reviews and guides, prepared for you by casino experts with years of experience in the gambling industry.
-            <br>
-            We know exactly what to look for in a casino, and our aim is to make it easier for you to discover those online platforms that offer variety, rewards and peace of mind.
-            <br>
-            Save time and money as you treat yourself to an online casino experience that’s brimming with opportunities!
-            <br>
-            Our casino reviews are expertly researched, critical and balanced, and <a href="">https://casino-online</a> we provide insight on every aspect, bringing to our readers an honest casino review process. </p>
-        <h3>The Legality of Online Casinos in Canada</h3>
-        <p>In Canada, the individual provinces regulate gambling at a local level. However, the current legislation does not cater to online casinos operated by offshore companies.</p>
-
-        <h4>But this does not make playing at an offshore online casino illegal.</h4>
-        <p>
-            That said, Canadian players must be extra careful which casinos to join, since the consequences of depositing funds with an unlicensed casino can be dire indeed!
-            <br>
-            Across the gaming industry, there are various licencing bodies, which include the Malta Gaming Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling Control Commission.
-            <br>
-            We always deal with online casinos that hold a license by at least one of these regulators.
-            <br>
-            So what does it mean when a casino is licensed?
-        </p>
-
-        <div class="cms-banner">
-            <img src="components/cms/img/banner.jpg" alt="">
-            <div class="cms-banner__ttl">Banner</div>
-        </div>
-
-        <div class="two-cols">
-            <h4 class="two-cols__ttl">But this does not make playing at an offshore online casino illegal.</h4>
-            <div class="two-cols__col">
-                <ol>
-                    <li>That said, Canadian players must be extra careful which casinos to join, since the consequences
-                        of depositing funds with an unlicensed casino can be dire indeed!
-                    </li>
-                    <li>Across the gaming industry, there are various licencing bodies, which include the Malta Gaming
-                        Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling
-                        Control Commission.
-                    </li>
-                    <li>We always deal with online casinos that hold a license by at least one of these regulators.
-                    </li>
-                </ol>
+        <div class="container">
+            <h2>Our Team of Casino Experts Are Here For You!</h2>
+            <p>Here at CanadaCasino, we pride ourselves on providing honest casino reviews and guides, prepared for you by casino experts with years of experience in the gambling industry.
+                <br>
+                We know exactly what to look for in a casino, and our aim is to make it easier for you to discover those online platforms that offer variety, rewards and peace of mind.
+                <br>
+                Save time and money as you treat yourself to an online casino experience that’s brimming with opportunities!
+                <br>
+                Our casino reviews are expertly researched, critical and balanced, and <a href="">https://casino-online</a> we provide insight on every aspect, bringing to our readers an honest casino review process. </p>
+            <h3>The Legality of Online Casinos in Canada</h3>
+            <p>In Canada, the individual provinces regulate gambling at a local level. However, the current legislation does not cater to online casinos operated by offshore companies.</p>
+    
+            <h4>But this does not make playing at an offshore online casino illegal.</h4>
+            <p>
+                That said, Canadian players must be extra careful which casinos to join, since the consequences of depositing funds with an unlicensed casino can be dire indeed!
+                <br>
+                Across the gaming industry, there are various licencing bodies, which include the Malta Gaming Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling Control Commission.
+                <br>
+                We always deal with online casinos that hold a license by at least one of these regulators.
+                <br>
+                So what does it mean when a casino is licensed?
+            </p>
+    
+            <div class="cms-banner">
+                <picture>
+                    <source type="image/webp" srcset="img/banner.webp">
+                    <source type="image/png" srcset="img/banner.jpg">
+                    <img src="img/banner.jpg" alt="">
+                </picture>
+                <div class="cms-banner__ttl">Banner</div>
             </div>
-
-            <div class="two-cols__col">
-                <ul>
-                    <li>That said, Canadian players must be extra careful which casinos to join, since the consequences
-                        of depositing funds with an unlicensed casino can be dire indeed!
-                    </li>
-                    <li>Across the gaming industry, there are various licencing bodies, which include the Malta Gaming
-                        Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling
-                        Control Commission.
-                    </li>
-                    <li>We always deal with online casinos that hold a license by at least one of these regulators.
-                    </li>
-                </ul>
+    
+            <div class="two-cols">
+                <h4 class="two-cols__ttl">But this does not make playing at an offshore online casino illegal.</h4>
+                <div class="two-cols__col">
+                    <ol>
+                        <li>That said, Canadian players must be extra careful which casinos to join, since the consequences
+                            of depositing funds with an unlicensed casino can be dire indeed!
+                        </li>
+                        <li>Across the gaming industry, there are various licencing bodies, which include the Malta Gaming
+                            Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling
+                            Control Commission.
+                        </li>
+                        <li>We always deal with online casinos that hold a license by at least one of these regulators.
+                        </li>
+                    </ol>
+                </div>
+    
+                <div class="two-cols__col">
+                    <ul>
+                        <li>That said, Canadian players must be extra careful which casinos to join, since the consequences
+                            of depositing funds with an unlicensed casino can be dire indeed!
+                        </li>
+                        <li>Across the gaming industry, there are various licencing bodies, which include the Malta Gaming
+                            Authority (MGA), Curacao eGaming, the Kahnawake Gaming Commission and the Alderney Gambling
+                            Control Commission.
+                        </li>
+                        <li>We always deal with online casinos that hold a license by at least one of these regulators.
+                        </li>
+                    </ul>
+                </div>
             </div>
+    
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Online Casino</th>
+                    <th>Land Based Casino</th>
+                </tr>
+                <tr>
+                    <td>Get more bonuses</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+                <tr>
+                    <td>Regular promotions</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+                <tr>
+                    <td>Play everywhere</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+                <tr>
+                    <td>Play anytime</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+                <tr>
+                    <td>Wider game selection</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+                <tr>
+                    <td>Safety</td>
+                    <td><img src="img/check.svg" width="15" height="12" alt=""></td>
+                    <td><img src="img/cross.svg" width="15" height="15" alt=""></td>
+                </tr>
+            </table>
+    
+            <h3>Our Team of Casino Experts Are Here For You!</h3>
+            <p>
+                Here at CanadaCasino, we pride ourselves on providing honest casino reviews and guides, prepared for you by casino experts with years of experience in the gambling industry.
+                <br>
+                We know exactly what to look for in a casino, and our aim is to make it easier for you to discover those online platforms that offer variety, rewards and peace of mind.
+                <br>
+                Save time and money as you treat yourself to an online casino experience that’s brimming with opportunities!
+                <br>
+                Our casino reviews are expertly researched, critical and balanced, and we provide insight on every aspect, bringing to our readers an honest casino review process.
+            </p>
         </div>
-
-        <table class="table">
-            <tr>
-                <th></th>
-                <th>Online Casino</th>
-                <th>Land Based Casino</th>
-            </tr>
-            <tr>
-                <td>Get more bonuses</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-            <tr>
-                <td>Regular promotions</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-            <tr>
-                <td>Play everywhere</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-            <tr>
-                <td>Play anytime</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-            <tr>
-                <td>Wider game selection</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-            <tr>
-                <td>Safety</td>
-                <td><svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg></td>
-                <td><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></td>
-            </tr>
-        </table>
-
-        <h3>Our Team of Casino Experts Are Here For You!</h3>
-        <p>
-            Here at CanadaCasino, we pride ourselves on providing honest casino reviews and guides, prepared for you by casino experts with years of experience in the gambling industry.
-            <br>
-            We know exactly what to look for in a casino, and our aim is to make it easier for you to discover those online platforms that offer variety, rewards and peace of mind.
-            <br>
-            Save time and money as you treat yourself to an online casino experience that’s brimming with opportunities!
-            <br>
-            Our casino reviews are expertly researched, critical and balanced, and we provide insight on every aspect, bringing to our readers an honest casino review process.
-        </p>
     </div>
-</div>
-<div class="modal modal-calc" id="modal-calc" tabindex="-1" role="dialog" aria-labelledby="modal-calc" aria-hidden="true">
-    <div class="modal__btns">
-        <button type="button" class="btn-close js-popup-close" aria-label="Закрыть"><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></button>
-    </div>
-
-    <div class="modal__content">
-        <form action="" class="search">
-
-        </form>
-    </div>
-
-    <div class="modal__footer">
-    </div>
-</div>
+</main>
 <footer class="footer">
     <div class="partners-logos">
         <div class="container">
             <ul class="partners-logos__list">
-                <li class="partners-logos__item"><img src="components/footer/img/gambling-therapy-logo.svg" alt=""></li>
-                <li class="partners-logos__item"><img src="components/footer/img/begambleawareorg-logo.svg" alt=""></li>
-                <li class="partners-logos__item"><img src="components/footer/img/dmca-logo.svg" alt=""></li>
-                <li class="partners-logos__item"><img src="components/footer/img/21+.svg" alt=""></li>
-                <li class="partners-logos__item"><img src="components/footer/img/copyright-house-logo.svg" alt=""></li>
+                <li class="partners-logos__item"><img src="img/gambling-therapy-logo.svg" alt=""></li>
+                <li class="partners-logos__item"><img src="img/begambleawareorg-logo.svg" alt=""></li>
+                <li class="partners-logos__item"><img src="img/dmca-logo.svg" alt=""></li>
+                <li class="partners-logos__item"><img src="img/21+.svg" alt=""></li>
+                <li class="partners-logos__item"><img src="img/copyright-house-logo.svg" alt=""></li>
             </ul>
         </div>
     </div>
@@ -339,16 +299,5 @@
     </div>
 </footer>
 
-<script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script defer src="js/check.webp.js"></script>
-<script defer src="js/libs/bodyScrollLock.min.js"></script>
-<script defer src="js/jquery.popup.js"></script>
-<script defer src="js/jquery.tabs.js"></script>
-<script defer src="js/jquery.open-close.js"></script>
-<script defer src="js/script.js"></script>
-<script defer src="js/libs/swiper-bundle.min.js"></script>
-<script defer src="js/sliders.js"></script>
 </body>
 </html>

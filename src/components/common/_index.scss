@@ -1,0 +1,126 @@
+@import "buttons";
+
+* {
+    box-sizing: border-box
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/opensans.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/opensansbold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/roboto.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/robotobold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: var(--base-font-size);
+    font-family: var(--base-font-family);
+    line-height: var(--base-line-height);
+    color: var(--theme-cr-txt);
+    background-color: var(--theme-bg-1);
+}
+
+a {
+    text-decoration: underline;
+    color: var(--theme-cr-3);
+
+    &:not([class]){
+        @media (min-width: 992px) {
+            text-decoration: none;
+            color: var(--theme-cr-3);
+        }
+    }
+}
+
+a,
+button {
+    transition: var(--transition-default);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img,
+video,
+iframe {
+    vertical-align: top;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+.h,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: var(--side-gutters);
+    padding-right: var(--side-gutters);
+    max-width: var(--container);
+
+    &--cms {
+        @extend .container;
+        max-width: var(--container--cms);
+    }
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    max-width: 1em;
+    flex: 0 0 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}

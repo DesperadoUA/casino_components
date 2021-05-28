@@ -1,0 +1,114 @@
+%btn-general {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.btn-default {
+    @extend %btn-general;
+    color: var(--theme-cr-1);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    position: relative;
+    padding: 0;
+}
+
+.btn-primary {
+    @extend %btn-general;
+    font-size: 14px;
+    border-radius: 19px;
+    background-color: var(--btn-primary);
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    min-height: 38px;
+    padding: 5px .9em;
+
+    @media (min-width: 992px) {
+        background-color: var(--btn-primary);
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /* hack for IE11 */
+    @media all and (-ms-high-contrast:none) {
+        *::-ms-backdrop, & {
+            height: 38px;
+        }
+    }
+
+    &.is-disabled,
+    &[disabled] {
+        background-color: var(--disabled-bg);
+        color: var(--disabled-cr);
+    }
+
+    .icon-arrow-next {
+        font-size: .714em;
+        margin-left: 5px;
+        margin-top: 1px;
+    }
+}
+
+[class*="btn"][disabled] {
+    pointer-events: none;
+}
+
+.btn-secondary {
+    @extend %btn-general;
+    font-size: 14px;
+    border-radius: 19px;
+    background-color: var(--btn-secondary);
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    min-height: 38px;
+    padding: 5px .9em;
+
+    @media (min-width: 992px) {
+        background-color: var(--btn-secondary);
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /* hack for IE11 */
+    @media all and (-ms-high-contrast:none) {
+        *::-ms-backdrop, & {
+            height: 38px;
+        }
+    }
+
+    &.is-disabled,
+    &[disabled] {
+        background-color: var(--disabled-bg);
+        color: var(--disabled-cr);
+    }
+
+    .icon-arrow-next {
+        font-size: .714em;
+        margin-left: 5px;
+        margin-top: 1px;
+    }
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}

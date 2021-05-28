@@ -1,6 +1,6 @@
 // body class when menu is open
 body {
-    @include media('<desktop') {
+    @media (max-width: 991px) {
         &.is-menu-open {
             overflow: hidden;
 
@@ -19,32 +19,34 @@ body {
 }
 
 .main-nav {
-    @include media('>=desktop') {
+    @media (min-width: 992px) {
         margin-right: auto;
         margin-left: 5.729vw;
     }
 }
 
 .main-nav__list {
-    @extend %listreset;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    @include media('>=desktop') {
+    @media (min-width: 992px) {
         display: flex;
         flex-wrap: wrap;
     }
 
     li {
-        @include media('<desktop') {
+        @media (max-width: 991px) {
             text-align: center;
             margin-bottom: 26px;
         }
 
         &:not(:first-child) {
-            @include media('>=desktop') {
+            @media (min-width: 992px) {
                 margin-left: 3.183vw;
             }
 
-            @include media('>=largescreen') {
+            @media (min-width: 1600px) {
                 margin-left: 2.0833vw;
             }
         }
@@ -60,7 +62,7 @@ body {
     display: inline-flex;
     align-items: center;
 
-    @include media('<desktop') {
+    @media (max-width: 991px) {
         font-size: 24px;
         font-weight: 500;
     }
@@ -72,7 +74,7 @@ body {
         opacity: 1;
     }
 
-    @include hover {
+    @media (min-width: 992px) {
         opacity: 1;
     }
 
@@ -94,12 +96,12 @@ body {
     align-items: center;
     justify-content: center;
 
-    @include media('<desktop') {
+    @media (max-width: 991px) {
         display: flex;
     }
 
     .bar {
-        @include anim;
+        transition: var(--transition-default);
         position: relative;
         background-color: #fff;
         background-clip: padding-box;
@@ -123,7 +125,7 @@ body {
 
         &:before,
         &:after {
-            @include ycenter;
+            position: absolute;
             content: '';
             transform: rotate(0) translateY(-50%);
             background-clip: padding-box;
@@ -137,8 +139,8 @@ body {
 }
 
 .mobile-menu {
-    @include media('<desktop') {
-        @include anim($dur: $animation-speed);
+    @media (max-width: 991px) {
+        transition: var(--transition-default);
         overflow: hidden;
         position: fixed;
         z-index: 999;

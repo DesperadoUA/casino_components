@@ -58,7 +58,7 @@ const options = {
         html: arg.p + 'src/*.html',
         js: arg.p + 'src/js/**/*.js',
         style: arg.p + 'src/components/**/*.scss',
-        img: arg.p + 'src/components/**/*.{svg,png,jpg}',
+        img: arg.p + 'src/img/**/*.{svg,png,jpg}',
         favicon: arg.p + 'src/favicon/*.*',
         icons: arg.p + 'src/components/svg-icons/*.svg',
         fonts: arg.p + 'src/fonts/**/*',
@@ -69,7 +69,7 @@ const options = {
         html: arg.p + 'src/**/*.html',
         js: arg.p + 'src/js/**/*.js',
         style: arg.p + 'src/components/**/*.scss',
-        img: arg.p + 'src/components/**/*.*',
+        img: arg.p + 'src/img/**/*.*',
         icons: arg.p + 'src/components/svg-icons/*.svg',
         fonts: arg.p + 'src/fonts/**/*',
         uploads: arg.p + 'src/uploads/**/*.*',
@@ -79,7 +79,7 @@ const options = {
         html: arg.p + 'dist/',
         js: arg.p + 'dist/js/',
         css: arg.p + 'dist/components/',
-        img: arg.p + 'dist/images/',
+        img: arg.p + 'dist/img/',
         favicon: arg.p + 'dist/favicon/',
         uploads: arg.p + 'dist/uploads/',
         icons: arg.p + 'src/components/svg-icons/'
@@ -304,7 +304,6 @@ gulp.task('image:copy', gulp.series('image:webp', () =>
         '!' + options.src.icons],
         {base: arg.p + 'src'}
     )
-        .pipe(cache())
         .pipe(gulp.dest(options.dist.html))
         .pipe(reload({stream: true}))
 ));
@@ -380,7 +379,7 @@ gulp.task('watch', function () {
     $.watch(options.watch.js, gulp.series('js:build'));
     $.watch(options.watch.img, gulp.series('image:copy'));
     $.watch(options.watch.static, gulp.series('static:build'));
-    $.watch(options.watch.icons, gulp.series('icons:build'));
+    //$.watch(options.watch.icons, gulp.series('icons:build'));
     $.watch(options.watch.style, gulp.series('style:build'));
 });
 
@@ -408,7 +407,7 @@ gulp.task('build', function (cb) {
         'js:build',
         'style:build',
         'image:copy',
-        'icons:build',
+        //'icons:build',
         'static:build',
         cb
     );
