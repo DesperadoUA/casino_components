@@ -137,11 +137,16 @@
     line-height: 1.6;
     margin-bottom: 50px;
 
+    &__overflow {
+        box-shadow: 0 2px 14px rgba(#04001a, .15);
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     table {
         border-spacing: 0;
         background-color: #fff;
         border: 1px solid rgba(#000, .2);
-        box-shadow: 0 2px 14px rgba(#04001a, .15);
         border-radius: 14px;
         min-width: 1000px;
         width: 100%;
@@ -198,11 +203,6 @@
     .icon-check {
         color: #01b94a;
     }
-}
-
-.table__overflow {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .table__btn {
