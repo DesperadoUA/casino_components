@@ -58,7 +58,10 @@
 }
 
 .casino-item__logo {
-    border-radius: 14px 0 0 14px;
+    overflow: hidden;
+    border-radius: 14px 0 0 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% - 112px);
 }
 
 .casino-item__rating {
@@ -167,10 +170,15 @@
 
 .casino-item__btn {
     color: #fff;
+    font-family: var(--base-font-family);
     font-size: 16px;
     font-weight: 700;
     min-height: 40px;
     text-decoration: none;
+    border: 0;
+    padding: 3px 5px;
+    width: 100%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,10 +192,10 @@
     }
 
     &.--blue {
-        background: linear-gradient(0deg, #0194ff, #0194ff), #01b94a;
+        background-color: #0194ff;
 
         &:hover {
-            background: linear-gradient(0deg, #0475dd, #0475dd), #01b94a;
+            background-color: #0475dd;
         }
     }
 }

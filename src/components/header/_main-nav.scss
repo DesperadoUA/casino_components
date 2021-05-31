@@ -1,27 +1,7 @@
-// body class when menu is open
-body {
-    @media (max-width: 991px) {
-        &.is-menu-open {
-            overflow: hidden;
-
-            //.logo,
-            .btn-callback,
-            .main,
-            .footer {
-                filter: blur(15px);
-            }
-
-            .btn-top {
-                display: none;
-            }
-        }
-    }
-}
-
 .main-nav {
     @media (min-width: 992px) {
-        margin-right: auto;
-        margin-left: 5.729vw;
+        margin-left: auto;
+        margin-right: 70px;
     }
 }
 
