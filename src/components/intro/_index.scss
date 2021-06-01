@@ -30,3 +30,20 @@
         font-size: 32px;
     }
 }
+
+.intro__sticker {
+    min-height: 35px;
+    background: rgba(#fff, .12);
+    border-radius: 42px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 25px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.intro__sticker-ico {
+    width: 16px;
+    margin-right: 6px;
+}

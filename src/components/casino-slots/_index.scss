@@ -1,0 +1,68 @@
+.casino-slots {
+    --slots-gutters: 70px;
+    --slots-width: 33.333%;
+
+    background-color: var(--theme-bg-1);
+    padding-top: 41px;
+    padding-bottom: 37px;
+}
+
+.casino-slots__ttl {
+    font-size: 28px;
+    line-height: 1.8;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.casino-slots__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--slots-gutters) / -2);
+    margin-right: calc(var(--slots-gutters) / -2);
+
+    .casino-group-item {
+        width: calc(var(--slots-width) - var(--slots-gutters));
+        flex-basis: calc(var(--slots-width) - var(--slots-gutters));
+        margin-left: calc(var(--slots-gutters) / 2);
+        margin-right: calc(var(--slots-gutters) / 2);
+        flex-shrink: 0;
+    }
+}
+
+.casino-group-item {
+    background-color: rgba(#0B0038, .7);
+    border: 1px solid rgba(#fff, .1);
+    border-radius: 10px;
+    padding: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.072;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: rgba(#0b0038, .8);
+        }
+    }
+
+    .circle-rating {
+        margin-right: 16px;
+        margin-bottom: 0;
+    }
+}
+
+.casino-group-item__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+}
+
+.casino-group-item__name {
+    line-height: 1.643;
+    font-weight: 700;
+}

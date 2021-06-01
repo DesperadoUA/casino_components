@@ -1,0 +1,124 @@
+.casino-detail {
+    --heading-col-width: 228px;
+    --detail-ttl-width: 139px;
+
+    padding-top: 59px;
+    padding-bottom: 17px;
+    background-color: #fff;
+    display: flow-root;
+}
+
+.detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 9px;
+}
+
+.detail-row__heading {
+    flex: 0 0 var(--heading-col-width);
+    max-width: var(--heading-col-width);
+    margin-bottom: 20px;
+    padding-top: 8px;
+}
+
+.detail-row__ttl {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.detail-row__sub-ttl {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.detail-row__content {
+    width: calc(100% - var(--heading-col-width));
+    margin-left: auto;
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-list {
+    margin: 0 0 -12px;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.375;
+}
+
+.detail-list__item {
+    flex: 0 0 43%;
+    max-width: 43%;
+    padding-right: 10px;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.detail-list__ttl {
+    flex: 0 0 var(--detail-ttl-width);
+    padding-right: 5px;
+}
+
+.detail-list__value {
+    flex-shrink: 0;
+    font-weight: 700;
+    flex-basis: calc(100% - var(--detail-ttl-width));
+}
+
+.game-type {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 40px;
+    padding: 6px 12px;
+    background: rgba(#0f0038, .7);
+    border-radius: 6px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.game-type__icon {
+    margin-right: 10px;
+    margin-left: 4px;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+.detail-item {
+    transition: var(--transition-default);
+    display: inline-flex;
+    align-items: center;
+    color: #281c4b;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    min-height: 40px;
+    background: rgba(#281c4b, .08);
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 1px transparent;
+    text-decoration: none;
+
+    @media screen and (min-width: 992px) {
+        &:hover {
+            box-shadow: inset 0 0 0 1px var(--btn-primary);
+        }
+    }
+}
+
+.detail-item__icon {
+    margin-right: 10px;
+    margin-left: 4px;
+}

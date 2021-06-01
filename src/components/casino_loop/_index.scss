@@ -192,7 +192,7 @@
     }
 
     &.--blue {
-        background-color: #0194ff;
+        background-color: var(--btn-primary);
 
         &:hover {
             background-color: #0475dd;
