@@ -268,6 +268,16 @@ img {
   0% {
     stroke-dasharray: 0 100; } }
 
+.circle-rating__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px; }
+
 .circle-rating__percentage {
   position: absolute;
   left: 50%;
@@ -549,16 +559,6 @@ img {
       background: rgba(0, 0, 0, 0.4); } }
   .offer-item .circle-rating {
     margin-right: 10px; }
-
-.offer-item__logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  border-radius: 50%;
-  width: 62px;
-  height: 62px; }
 
 .offer-item__content {
   font-size: 12px;
@@ -870,6 +870,16 @@ img {
   .slot-item--gradient {
     padding-top: 38px;
     color: #fff; }
+    .slot-item--gradient:nth-child(4n - 3) {
+      background-image: linear-gradient(0deg, #0d0121, #530323); }
+    .slot-item--gradient:nth-child(4n - 2) {
+      background-image: linear-gradient(0deg, #011127, #026f4c); }
+    .slot-item--gradient:nth-child(4n - 1) {
+      background-image: linear-gradient(0deg, #0d0121, #024278); }
+    .slot-item--gradient:nth-child(4n) {
+      background-image: linear-gradient(0deg, #320082, #08002E); }
+    .slots--new .slot-item--gradient {
+      background-image: linear-gradient(0deg, #0d0121, #024278); }
 
 .slot-item__rating {
   display: -ms-flexbox;
@@ -993,7 +1003,7 @@ img {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  padding: 24px 7px 8px;
+  padding: 24px 7px 0;
   margin-bottom: 30px; }
 
 .casino-group__ttl {
@@ -1047,14 +1057,21 @@ img {
       align-items: center;
   color: #fff;
   margin-bottom: 11px; }
-  .casino-card:first-child {
+  .categories ~ .container > .casino-card:first-child, .categories ~ .container--cms > .casino-card:first-child {
     margin-top: 68px; }
-  .casino-card:last-of-type {
-    margin-bottom: 43px; }
 
 .casino-card__logo {
+  -ms-flex: 0 0 244px;
+      flex: 0 0 244px;
+  max-width: 244px;
+  overflow: hidden;
   border-radius: 10px;
   margin-right: 8px; }
+  .casino-card__logo img {
+    width: 100%;
+    max-height: 140px;
+    max-width: none;
+    object-fit: cover; }
 
 .casino-card__rating {
   -ms-flex: 0 0 119px;
@@ -1264,7 +1281,6 @@ img {
     fill: currentColor; }
 
 .detail-item {
-  transition: var(--transition-default);
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
@@ -1280,9 +1296,11 @@ img {
   border-radius: 6px;
   box-shadow: inset 0 0 0 1px transparent;
   text-decoration: none; }
-  @media screen and (min-width: 992px) {
-    .detail-item:hover {
-      box-shadow: inset 0 0 0 1px var(--btn-primary); } }
+
+@media screen and (min-width: 992px) {
+  button.detail-item:hover,
+  a.detail-item:hover {
+    box-shadow: inset 0 0 0 1px var(--btn-primary); } }
 
 .detail-item__icon {
   margin-right: 10px;

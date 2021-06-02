@@ -59,6 +59,27 @@
     &--gradient {
         padding-top: 38px;
         color: #fff;
+
+        &:nth-child(4n - 3) {
+            background-image: linear-gradient(0deg, #0d0121, #530323);
+        }
+
+        &:nth-child(4n - 2) {
+            background-image: linear-gradient(0deg, #011127, #026f4c);
+        }
+
+        &:nth-child(4n - 1) {
+            background-image: linear-gradient(0deg, #0d0121, #024278);
+        }
+
+        &:nth-child(4n) {
+            background-image: linear-gradient(0deg, #320082, #08002E);
+        }
+
+        // Всегда синий
+        .slots--new & {
+            background-image: linear-gradient(0deg, #0d0121, #024278);
+        }
     }
 }
 

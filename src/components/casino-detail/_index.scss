@@ -96,7 +96,6 @@
 }
 
 .detail-item {
-    transition: var(--transition-default);
     display: inline-flex;
     align-items: center;
     color: #281c4b;
@@ -110,7 +109,10 @@
     border-radius: 6px;
     box-shadow: inset 0 0 0 1px transparent;
     text-decoration: none;
+}
 
+button.detail-item,
+a.detail-item {
     @media screen and (min-width: 992px) {
         &:hover {
             box-shadow: inset 0 0 0 1px var(--btn-primary);
