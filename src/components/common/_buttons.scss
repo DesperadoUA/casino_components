@@ -111,6 +111,16 @@
         }
     }
 
+    &.--green {
+        background-color: var(--btn-secondary);
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #009c3e;
+            }
+        }
+    }
+
     /* hack for IE11 */
     @media all and (-ms-high-contrast:none) {
         *::-ms-backdrop, & {

@@ -21,7 +21,7 @@
     flex: 1 1 0%;
     color: #fff;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 15px;
     line-height: 27px;
     padding: 7px 10px;
@@ -36,5 +36,6 @@
     &.active,
     &.is-active {
         background-color: var(--btn-primary);
+        font-weight: 700;
     }
 }

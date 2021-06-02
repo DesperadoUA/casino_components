@@ -84,6 +84,11 @@
   @media (min-width: 992px) {
     .btn-tertiary:hover {
       background-color: #0475dd; } }
+  .btn-tertiary.--green {
+    background-color: var(--btn-secondary); }
+    @media (min-width: 992px) {
+      .btn-tertiary.--green:hover {
+        background-color: #009c3e; } }
   @media all and (-ms-high-contrast: none) {
     .btn-tertiary *::-ms-backdrop, .btn-tertiary {
       height: 50px; } }
@@ -792,7 +797,7 @@ img {
       flex: 1 1 0%;
   color: #fff;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 15px;
   line-height: 27px;
   padding: 7px 10px;
@@ -801,7 +806,8 @@ img {
     .categories__link:hover {
       background: rgba(0, 0, 0, 0.2); } }
   .categories__link.active, .categories__link.is-active {
-    background-color: var(--btn-primary); }
+    background-color: var(--btn-primary);
+    font-weight: 700; }
 
 .slots {
   --slots-gutter: 14px;
@@ -1040,8 +1046,11 @@ img {
   -ms-flex-align: center;
       align-items: center;
   color: #fff;
-  margin-top: 68px;
-  margin-bottom: 43px; }
+  margin-bottom: 11px; }
+  .casino-card:first-child {
+    margin-top: 68px; }
+  .casino-card:last-of-type {
+    margin-bottom: 43px; }
 
 .casino-card__logo {
   border-radius: 10px;
@@ -1097,6 +1106,11 @@ img {
   margin-bottom: 2px;
   max-width: 21px; }
 
+.casino-card-param__value {
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700; }
+
 .casino-card-param__txt {
   font-size: 10px;
   font-weight: 700;
@@ -1138,7 +1152,20 @@ img {
 .casino-card__cta {
   -ms-flex-positive: 1;
       flex-grow: 1;
-  margin-left: 10px; }
+  margin-left: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .casino-card__cta [class*="btn"] + [class*="btn"] {
+    margin-top: 6px; }
+
+.casino-card__more {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 80px; }
+  .casino-card__more [class*="btn"] {
+    min-width: 230px; }
 
 .casino-detail {
   --heading-col-width: 228px;
@@ -1464,7 +1491,7 @@ img {
   .table .icon-cross {
     color: #ff5f5f; }
   .table .icon-check {
-    color: #01b94a; }
+    color: var(--btn-secondary); }
 
 .table__btn {
   text-align: center;

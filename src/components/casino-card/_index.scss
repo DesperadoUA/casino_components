@@ -6,8 +6,15 @@
     display: flex;
     align-items: center;
     color: #fff;
-    margin-top: 68px;
-    margin-bottom: 43px;
+    margin-bottom: 11px;
+
+    &:first-child {
+        margin-top: 68px;
+    }
+
+    &:last-of-type {
+        margin-bottom: 43px;
+    }
 }
 
 .casino-card__logo {
@@ -59,6 +66,12 @@
     max-width: 21px;
 }
 
+.casino-card-param__value {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 700;
+}
+
 .casino-card-param__txt {
     font-size: 10px;
     font-weight: 700;
@@ -101,4 +114,20 @@
 .casino-card__cta {
     flex-grow: 1;
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+
+    [class*="btn"] + [class*="btn"] {
+        margin-top: 6px;
+    }
+}
+
+.casino-card__more {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 80px;
+
+    [class*="btn"] {
+        min-width: 230px;
+    }
 }
