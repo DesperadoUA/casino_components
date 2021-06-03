@@ -50,6 +50,13 @@
     display: flex;
     flex-wrap: wrap;
     line-height: 1.375;
+
+    &.--stack {
+        .detail-list__item {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
 }
 
 .detail-list__item {

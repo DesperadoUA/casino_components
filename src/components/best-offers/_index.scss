@@ -1,7 +1,7 @@
 .best-offer {
     --offer-gutter: 14px;
     --offer-width: 270px;
-    margin-bottom: 41px;
+    margin-bottom: 27px;
     color: var(--theme-cr-txt-alt);
 
     @media (min-width: 768px) {
@@ -33,6 +33,7 @@
         margin-left: calc(var(--offer-gutter) / 2);
         margin-right: calc(var(--offer-gutter) / 2);
         flex-shrink: 0;
+        margin-bottom: var(--offer-gutter);
     }
 }
 

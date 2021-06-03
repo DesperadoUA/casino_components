@@ -7,12 +7,6 @@
     align-items: center;
     color: #fff;
     margin-bottom: 11px;
-
-    .categories ~ .container > & {
-        &:first-child {
-            margin-top: 68px;
-        }
-    }
 }
 
 .casino-card__logo {

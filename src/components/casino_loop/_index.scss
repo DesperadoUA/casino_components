@@ -1,10 +1,18 @@
 .casinos {
+    --casino-item-width: 100%;
     padding-bottom: 56px;
+
+    @media (min-width: 768px) {
+        --casino-item-width: 50%;
+    }
+
+    @media (min-width: 1280px) {
+        --casino-item-width: 33.333%;
+    }
 }
 
 .casinos__container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     counter-reset: counter;
     margin-left: -23px;
@@ -18,7 +26,7 @@
 
     .casino-item {
         flex-shrink: 0;
-        flex-basis: calc(33.333% - 46px);
+        flex-basis: calc(var(--casino-item-width) - 46px);
         margin-left: 23px;
         margin-right: 23px;
         position: relative;
@@ -45,7 +53,7 @@
 
 .casino-item {
     color: #fff;
-    max-width: 344px;
+    //max-width: 344px;
     background: rgba(#000, .2);
     border: 1px solid rgba(#fff, .1);
     border-radius: 14px;

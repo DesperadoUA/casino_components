@@ -234,3 +234,9 @@ img {
         }
     }
 }
+
+.full-width {
+    width: 100% !important;
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+}
