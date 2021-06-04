@@ -1,6 +1,5 @@
 .casinos {
     --casino-item-width: 100%;
-    padding-bottom: 56px;
 
     @media (min-width: 768px) {
         --casino-item-width: 50%;
@@ -8,6 +7,10 @@
 
     @media (min-width: 1280px) {
         --casino-item-width: 33.333%;
+    }
+
+    .items__cta {
+        margin-bottom: 56px;
     }
 }
 
@@ -205,13 +208,5 @@
         &:hover {
             background-color: #0475dd;
         }
-    }
-}
-
-.casinos__cta {
-    text-align: center;
-
-    .btn-primary {
-        min-width: 230px;
     }
 }

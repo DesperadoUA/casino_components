@@ -15,8 +15,8 @@
     --btn-primary:      #0194ff;
     --btn-secondary:    #01b94a;
     --table-head:       #5f63c0;
-    --disabled-bg:               #fafbfc;
-    --disabled-cr:               #c7ccd8;
+    --disabled-bg:      #fafbfc;
+    --disabled-cr:      #c7ccd8;
 
     /* Fonts */
     --base-font-size:   16px;
@@ -239,4 +239,13 @@ img {
     width: 100% !important;
     flex-basis: 100% !important;
     max-width: 100% !important;
+}
+
+.items__cta {
+    width: 100%;
+    text-align: center;
+
+    .btn-primary {
+        min-width: 230px;
+    }
 }

@@ -23,6 +23,7 @@
 
 .btn-primary {
   font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   font-weight: 700;
@@ -112,8 +113,8 @@
   --btn-primary:      #0194ff;
   --btn-secondary:    #01b94a;
   --table-head:       #5f63c0;
-  --disabled-bg:               #fafbfc;
-  --disabled-cr:               #c7ccd8;
+  --disabled-bg:      #fafbfc;
+  --disabled-cr:      #c7ccd8;
   /* Fonts */
   --base-font-size:   16px;
   --base-line-height:  1.6;
@@ -299,6 +300,12 @@ img {
   -ms-flex-preferred-size: 100% !important;
       flex-basis: 100% !important;
   max-width: 100% !important; }
+
+.items__cta {
+  width: 100%;
+  text-align: center; }
+  .items__cta .btn-primary {
+    min-width: 230px; }
 
 .main {
   overflow: hidden;
@@ -588,14 +595,15 @@ img {
   margin-bottom: 7px; }
 
 .casinos {
-  --casino-item-width: 100%;
-  padding-bottom: 56px; }
+  --casino-item-width: 100%; }
   @media (min-width: 768px) {
     .casinos {
       --casino-item-width: 50%; } }
   @media (min-width: 1280px) {
     .casinos {
       --casino-item-width: 33.333%; } }
+  .casinos .items__cta {
+    margin-bottom: 56px; }
 
 .casinos__container {
   display: -ms-flexbox;
@@ -784,11 +792,6 @@ img {
     background-color: var(--btn-primary); }
     .casino-item__btn.--blue:hover {
       background-color: #0475dd; }
-
-.casinos__cta {
-  text-align: center; }
-  .casinos__cta .btn-primary {
-    min-width: 230px; }
 
 .categories {
   padding-left: var(--side-gutters);
@@ -1394,18 +1397,35 @@ img {
 
 .useful-categories {
   --useful-categories-gutters: 45px;
-  --useful-categories-width: 388px;
+  --useful-categories-max-width: 344px;
+  --useful-categories-width: 344px;
   margin-bottom: 25px; }
+  @media (min-width: 768px) {
+    .useful-categories {
+      --useful-categories-width: 50%; } }
+  @media (min-width: 1180px) {
+    .useful-categories {
+      --useful-categories-width: 33.333%; } }
 
 .useful-categories__container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
   margin-left: calc(var(--useful-categories-gutters) / -2);
   margin-right: calc(var(--useful-categories-gutters) / -2); }
+  @media (min-width: 768px) {
+    .useful-categories__container {
+      -ms-flex-pack: justify;
+          justify-content: space-between; } }
+  .useful-categories__container:after {
+    content: '';
+    -ms-flex: auto;
+        flex: auto; }
   .useful-categories__container .useful-group {
-    width: calc(var(--useful-categories-width) - var(--useful-categories-gutters));
+    max-width: var(--useful-categories-max-width);
     -ms-flex-preferred-size: calc(var(--useful-categories-width) - var(--useful-categories-gutters));
         flex-basis: calc(var(--useful-categories-width) - var(--useful-categories-gutters));
     margin-left: calc(var(--useful-categories-gutters) / 2);
@@ -1414,13 +1434,13 @@ img {
         flex-shrink: 0; }
 
 .useful-group {
-  color: #fff;
   padding-top: 24px;
   margin-bottom: 30px; }
 
 .useful-group__ttl {
   font-size: 28px;
   line-height: 1.833;
+  color: var(--theme-cr-txt-alt);
   font-weight: 700;
   margin-bottom: 20px; }
 
@@ -1435,7 +1455,7 @@ img {
   font-size: 14px;
   line-height: 118.7%;
   border-radius: 10px;
-  color: currentColor;
+  color: var(--theme-cr-txt-alt);
   text-decoration: none; }
   .news-item:not(:last-child) {
     margin-bottom: 8px; }
@@ -1454,6 +1474,98 @@ img {
   -ms-flex-direction: column;
       flex-direction: column;
   color: currentColor;
+  text-decoration: none; }
+  .blog-item:not(:last-child) {
+    margin-bottom: 32px; }
+
+.blog-item__media {
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
+  margin-bottom: 17px; }
+
+.blog-item__btn-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 0;
+  border: 0;
+  cursor: pointer; }
+  @media (min-width: 992px) {
+    .blog-item__btn-play:hover {
+      background-color: rgba(0, 0, 0, 0.3); } }
+
+.blog-item__caption {
+  font-size: 14px;
+  line-height: 118.7%;
+  font-weight: 700;
+  padding-bottom: 16px;
+  position: relative; }
+  .blog-item__caption:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 8px;
+    right: 8px;
+    top: 100%;
+    background-color: rgba(255, 255, 255, 0.1); }
+
+.blog {
+  --blog-item-gutters: 45px;
+  --blog-item-max-width: 344px;
+  --blog-item-width: 100%; }
+  @media (min-width: 768px) {
+    .blog {
+      --blog-item-width: 50%; } }
+  @media (min-width: 1180px) {
+    .blog {
+      --blog-item-width: 33.333%; } }
+  .blog .items__cta {
+    margin-bottom: 46px; }
+
+.blog__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-left: calc(var(--blog-item-gutters) / -2);
+  margin-right: calc(var(--blog-item-gutters) / -2); }
+  @media (min-width: 768px) {
+    .blog__container {
+      -ms-flex-pack: justify;
+          justify-content: space-between; } }
+  .blog__container:after {
+    content: '';
+    -ms-flex: auto;
+        flex: auto; }
+  .blog__container .blog-item {
+    max-width: var(--blog-item-max-width);
+    -ms-flex-preferred-size: calc(var(--blog-item-width) - var(--blog-item-gutters));
+        flex-basis: calc(var(--blog-item-width) - var(--blog-item-gutters));
+    margin-left: calc(var(--blog-item-gutters) / 2);
+    margin-right: calc(var(--blog-item-gutters) / 2);
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+
+.blog-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  color: var(--theme-cr-txt-alt);
   text-decoration: none; }
   .blog-item:not(:last-child) {
     margin-bottom: 32px; }
