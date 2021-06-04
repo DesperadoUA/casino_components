@@ -21,7 +21,7 @@
 
 .useful-group {
     color: #fff;
-    padding: 24px 7px 0;
+    padding-top: 24px;
     margin-bottom: 30px;
 }
 
@@ -29,7 +29,7 @@
     font-size: 28px;
     line-height: 1.833;
     font-weight: 700;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
 }
 
 .news-item {
@@ -39,7 +39,7 @@
     background-color: rgba(#fff, .1);
     font-weight: 700;
     font-size: 14px;
-    line-height: 1.188;
+    line-height: 118.7%;
     border-radius: 10px;
     color: currentColor;
     text-decoration: none;
@@ -58,7 +58,7 @@
 .news-item__date {
     font-weight: 400;
     opacity: .75;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .blog-item {
@@ -76,7 +76,7 @@
     overflow: hidden;
     position: relative;
     border-radius: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 .blog-item__btn-play {
@@ -103,6 +103,9 @@
 }
 
 .blog-item__caption {
+    font-size: 14px;
+    line-height: 118.7%;
+    font-weight: 700;
     padding-bottom: 16px;
     position: relative;
 
