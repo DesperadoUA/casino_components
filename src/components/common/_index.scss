@@ -249,3 +249,269 @@ img {
         min-width: 230px;
     }
 }
+
+/*
+Casino Card*/
+
+.casino-card {
+    background: rgba(#000, .2);
+    border: 1px solid rgba(#fff, .1);
+    border-radius: 14px;
+    padding: 8px 18px 8px 8px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 11px;
+}
+
+.casino-card__logo {
+    flex: 0 0 244px;
+    max-width: 244px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 8px;
+
+    img {
+        width: 100%;
+        max-height: 140px;
+        max-width: none;
+        object-fit: cover;
+    }
+}
+
+.casino-card__rating {
+    flex: 0 0 119px;
+    max-width: 119px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(#1c0e27, .75);
+    border-radius: 10px;
+    margin-right: 16px;
+}
+
+.casino-card-param {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 0 0 188px;
+    max-width: 188px;
+}
+
+.casino-card-param__item {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end;
+
+    &:first-child,
+    &:nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    &.disabled {
+        opacity: .5;
+    }
+}
+
+.casino-card-param__img {
+    margin-bottom: 2px;
+    max-width: 21px;
+}
+
+.casino-card-param__value {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.casino-card-param__txt {
+    font-size: 10px;
+    font-weight: 700;
+    opacity: .75;
+}
+
+.casino-card-bonus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-weight: 700;
+    min-width: 130px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.casino-card-bonus__value {
+    font-size: 22px;
+    line-height: 1.25;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.casino-card-bonus__ttl {
+    font-size: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.casino-card-bonus__wager {
+    opacity: .75;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.casino-card__cta {
+    flex-shrink: 0;
+    flex-basis: 215px;
+    max-width: 215px;
+    margin-left: auto;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+
+    [class*="btn"] + [class*="btn"] {
+        margin-top: 6px;
+    }
+}
+
+.casino-card__txt {
+    line-height: 1.8125;
+    margin-left: 16px;
+}
+
+.casino-card__more {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 80px;
+
+    [class*="btn"] {
+        min-width: 230px;
+    }
+}
+
+
+/*
+Blog */
+
+.blog {
+    --blog-item-gutters: 45px;
+    --blog-item-max-width: 344px;
+    --blog-item-width: 100%;
+
+    @media (min-width: 768px) {
+        --blog-item-width: 50%;
+    }
+
+    @media (min-width: 1180px) {
+        --blog-item-width: 33.333%;
+    }
+
+    .items__cta {
+        margin-bottom: 46px;
+    }
+}
+
+.blog__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: calc(var(--blog-item-gutters) / -2);
+    margin-right: calc(var(--blog-item-gutters) / -2);
+
+    @media (min-width: 768px) {
+        justify-content: space-between;
+    }
+
+    &:after {
+        content: '';
+        flex: auto;
+    }
+
+    .blog-item {
+        max-width: var(--blog-item-max-width);
+        flex-basis: calc(var(--blog-item-width) - var(--blog-item-gutters));
+        margin-left: calc(var(--blog-item-gutters) / 2);
+        margin-right: calc(var(--blog-item-gutters) / 2);
+        flex-shrink: 0;
+    }
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    color: var(--theme-cr-txt-alt);
+    text-decoration: none;
+
+    &:not(:last-child) {
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            .blog-item__media img {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.blog-item__media {
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    margin-bottom: 17px;
+
+    img {
+        transition: var(--transition-default);
+        transform: scale(1.1);
+    }
+}
+
+.blog-item__btn-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(#fff, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+        &:hover {
+            background-color: rgba(#000, .3);
+        }
+    }
+}
+
+.blog-item__caption {
+    font-size: 14px;
+    line-height: 118.7%;
+    font-weight: 700;
+    padding-bottom: 16px;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        left: 8px;
+        right: 8px;
+        top: 100%;
+        background-color: rgba(#fff, 0.1);
+    }
+}
