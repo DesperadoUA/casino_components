@@ -1,0 +1,27 @@
+.section-heading__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 24px;
+}
+
+.section-heading__ttl {
+    font-size: 28px;
+    line-height: 1.358;
+    margin-bottom: 0;
+}
+
+.section-heading__link {
+    font-size: 16px;
+    font-weight: 700;
+    color: currentColor;
+    margin-bottom: 3px;
+
+    @media (min-width: 992px) {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

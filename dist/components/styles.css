@@ -1498,6 +1498,31 @@ img {
     top: 100%;
     background-color: rgba(255, 255, 255, 0.1); }
 
+.section-heading__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  color: #fff;
+  margin-top: 25px;
+  margin-bottom: 24px; }
+
+.section-heading__ttl {
+  font-size: 28px;
+  line-height: 1.358;
+  margin-bottom: 0; }
+
+.section-heading__link {
+  font-size: 16px;
+  font-weight: 700;
+  color: currentColor;
+  margin-bottom: 3px; }
+  @media (min-width: 992px) {
+    .section-heading__link:hover {
+      text-decoration: none; } }
+
 .cms {
   background-color: var(--theme-bg-1);
   padding-top: 45px;
