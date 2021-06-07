@@ -9,6 +9,7 @@
     --theme-cr-1:       #302552;
     --theme-cr-2:       #281c4c;
     --theme-cr-3:       #1f4fad;
+    --theme-cr-4:       #281c4b;
     --theme-cr-txt:     var(--theme-cr-2);
     --theme-cr-txt-alt: #fff;
     --cr-success:       #00ff66;
@@ -472,29 +473,6 @@ Blog */
     img {
         transition: var(--transition-default);
         transform: scale(1.1);
-    }
-}
-
-.blog-item__btn-play {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(#fff, .1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-
-    @media (min-width: 992px) {
-        &:hover {
-            background-color: rgba(#000, .3);
-        }
     }
 }
 
