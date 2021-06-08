@@ -453,8 +453,7 @@ Casino Card*/
 .casino-card__cta {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -ms-flex-preferred-size: 215px;
-      flex-basis: 215px;
+  width: 100%;
   max-width: 215px;
   margin-left: auto;
   padding-left: 15px;
@@ -485,7 +484,7 @@ Blog */
   @media (min-width: 1180px) {
     .blog {
       --blog-item-width: 33.333%; } }
-  .blog .items__cta {
+  .blog .items-more {
     margin-bottom: 46px; }
 
 .blog__container {
@@ -846,7 +845,7 @@ Blog */
   @media (min-width: 1280px) {
     .casinos {
       --casino-item-width: 33.333%; } }
-  .casinos .items__cta {
+  .casinos .items-more {
     margin-bottom: 56px; }
 
 .casinos__container {

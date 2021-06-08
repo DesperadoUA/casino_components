@@ -371,7 +371,7 @@ Casino Card*/
 
 .casino-card__cta {
     flex-shrink: 0;
-    flex-basis: 215px;
+    width: 100%;
     max-width: 215px;
     margin-left: auto;
     padding-left: 15px;
@@ -410,7 +410,7 @@ Blog */
         --blog-item-width: 33.333%;
     }
 
-    .items__cta {
+    .items-more {
         margin-bottom: 46px;
     }
 }
